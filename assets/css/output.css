@@ -535,3 +535,38 @@ body {
     font-family: "Geist";
     font-size: 30pt;
 }
+
+.textoGradiente {
+    background: linear-gradient(90deg, #ffffff 0%, #e0e0e0 50%, #a0a0a0 100%);
+    -webkit-background-clip: text; /* Para navegadores WebKit (Chrome, Safari) */
+    background-clip: text;
+    color: transparent; 
+}
+
+.videoExplicativo {
+    width: 80%;
+}
+
+.secao8 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.secao8 nav h4 {
+    color: white;
+    font-weight: bold;
+    font-family: "Geist";
+    font-size: 25pt;
+}
+
+.secao8 nav:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.secao8 nav img {
+    width: 70%;
+}
