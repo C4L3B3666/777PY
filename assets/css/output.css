@@ -15,44 +15,6 @@ body {
     overflow-x: hidden;
 }
 
-
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    clip-path: circle(0 0, 100% 0, 100% 100%, 0% 100%);
-    justify-content: center;
-    background: center / cover no-repeat url("../img/bg1.png");
-    height: 100%;
-}
-
-.conteudoPreloader img {
-    width: 50px;
-}
-
-.conteudoPreloader h1 {
-    font-family: var(--in);
-    color: white;
-}
-
-.conteudoPreloader p {
-    font-family: var(--in);
-    font-weight: 700;
-    color: var(--cr2);
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.2; }
-}
-
-
-
 #cursor {
     width: 30px;
     height: 30px;
