@@ -91,6 +91,7 @@ sup {
 }
 
 .btn {
+    box-shadow: 0 0 12px #00ff88;
     padding: .5rem 1rem;
     font-weight: bold;
     font-family: "Inter";
@@ -103,6 +104,7 @@ sup {
 
 }
 .btn0 {
+    box-shadow: none;
     background: transparent;
 }
 
@@ -633,11 +635,12 @@ footer nav:nth-child(3) a:hover {
     transition: all .3s ease;
     justify-content: center;
     opacity: 0;
-    transform: translateY(-100%);
+    pointer-events: none;
 }
 
 #divEnviarPalpite.activo {
     opacity: 1;
+    pointer-events: all;
     transform: translateY(0%);
 }
 
@@ -649,7 +652,7 @@ footer nav:nth-child(3) a:hover {
 }
 
 #divEnviarPalpite form {
-    width: 80%;
+    width: 90%;
     background: #212121;
     border: 2px solid #2E2C2C;
     display: flex;
@@ -684,7 +687,7 @@ form div:nth-child(2) nav h3 {
 }
 
 form .contentInputForm {
-    margin-block: 1rem;
+    margin-block: .5rem;
     position: relative;
 }
 
@@ -715,7 +718,7 @@ form .navInputFormRadio label {
     border-radius: 20px;
 }
 
-.contentInputForm .navInputFormText span {
+.contentInputForm .navInputFormText label {
     padding: .1rem;
     font-size: 10pt;
     font-weight: 700;
@@ -723,6 +726,7 @@ form .navInputFormRadio label {
     left: 1%;
     color: white;
     top: 14%;
+    z-index: 1;
     border-radius: 10px;
     position: absolute;
     background: #212121;
@@ -737,19 +741,21 @@ input {
     padding: .4rem;
     font-weight: 700;
     color: #fff;
+    z-index: 10;
     font-family: "Inter";
     border: 2px solid #2E2C2C;
     background: transparent;
 }
 
 .contentInputForm .navInputFormText input:focus,
+.contentInputForm .navInputFormText input:hover,
 .contentInputForm .navInputFormText input:not(:placeholder-shown) {
     border: 2px solid #40E194;
 }
 
 /* Mover o label quando o input está focado ou preenchido */
-.contentInputForm .navInputFormText input:focus + span,
-.contentInputForm .navInputFormText input:not(:placeholder-shown) + span {
+.contentInputForm .navInputFormText input:focus + label,
+.contentInputForm .navInputFormText input:not(:placeholder-shown) + label {
     top: -25%;
     color: #40E194;
 }
@@ -803,6 +809,7 @@ input {
 form .navInputFormRadio input:checked + label {
     background: #40E194;
     color: white;
+    box-shadow: 0 0 12px #00ff88;
     border: 2px solid #40E194;
 }
 
@@ -828,3 +835,27 @@ form .linkLogoForm {
     color: white;
     text-decoration: none;
 }
+
+/* Esconde os elementos inicialmente */
+.slide-left, .slide-right {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+  }
+  
+  /* Slide da esquerda (texto) */
+  .slide-left {
+    transform: translateX(-100px);
+  }
+  .slide-left.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Slide da direita (imagem) */
+  .slide-right {
+    transform: translateX(100px);
+  }
+  .slide-right.show {
+    opacity: 1;
+    transform: translateX(0);
+  }

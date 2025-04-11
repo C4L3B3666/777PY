@@ -124,3 +124,17 @@ cancelarForm.addEventListener("click", () => {
     telaForm.classList.remove("activo")
     document.querySelector("body").style.overflowY = "scroll"
 })
+
+
+const observer1 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer1.unobserve(entry.target);
+    }
+  });
+});
+
+document.querySelectorAll('.slide-left, .slide-right').forEach(el => {
+  observer1.observe(el);
+});
