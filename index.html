@@ -25,6 +25,7 @@
 <body>
 
     <div id="cursor"></div>
+    
     <header class="menu">
         <nav>
             <a href="index.html"><h1>777<sup>PY</sup></h1></a>
@@ -38,11 +39,127 @@
             </nav>
             <nav class="navBtns">
                 <a href="#"><button class="btn btn0">Contactar</button></a>
-                <a href="#"><button class="btn">Enviar Palpite <i class="fa-solid fa-paper-plane"></i></button></a>
+                <a href="#" id="MostrarFomEnviar" target="_top"><button class="btn">Enviar Palpite <i class="fa-solid fa-paper-plane"></i></button></a>
             </nav>
         </nav>
     </header>
+
     <main class="hero">
+        
+        <div id=divEnviarPalpite>
+            <form action="#">
+                <div class="imgForm">
+                    <img src="assets/img/img0.jpg" alt="" srcset="">
+                </div>
+                <div>
+                    <nav>
+                        <a href="#" class="linkLogoForm"><h3 style="font-size: 20pt;">777<sup>PY</sup></h3></a>
+                        <h3 style="color: gray;">Bem-vindo! Lembre-se que <span style="color: #40E194;"> teu palpite pode mudar a tua vida</span> em apenas 10 dias e aqui o <span style="color: #40E194;">teu palpite vale 2.5 milhões </span> de kwanzas. <i class="fa-solid fa-heart" style="color: #40E194;"></i></h3>
+                    </nav>
+                    <nav>
+                        <div class="primeirosInputs">
+
+                        <nav class="contentInputForm">
+                            <nav class="navInputFormText">
+                                <input type="text" placeholder=" ">
+                                <span>Nome</span>
+                            </nav>
+                            <h5>Será usado para a sua identificação formal</h5>
+                        </nav>
+                        <nav class="contentInputForm">
+                            <nav class="navInputFormText">
+                                <input type="text" placeholder=" ">
+                                <span>Sobrenome</span>
+                            </nav>
+                            <h5>Será usado para a sua identificação formal</h5>
+                        </nav>
+                    <!-- </div> -->
+                    
+                        <nav class="contentInputForm">
+                            <nav class="navInputFormText">
+                                <input type="text" placeholder=" ">
+                                <span>E-mail</span>
+                            </nav>
+                            <h5>Contato direito ou aviso de premiação ou envio (Opcional)</h5>
+                        </nav>
+
+                        <nav class="contentInputForm">
+                            <nav class="navInputFormText">
+                                <input type="text" placeholder=" ">
+                                <span>Número de Telefone</span>
+                            </nav>
+                            <h5>Contato direto para confirmação de dados ou aviso de premiação</h5>
+                        </nav>
+                    </div>
+
+                        <nav class="contentInputForm">
+                            <h4>O teu palpite inclui qual modalidade?</h4>
+                            <br>
+                            <nav class="navInputFormRadio">
+                                <input type="radio" name="modalidade" id="boxe">
+                                <label for="boxe">Boxe <i class="fa-solid fa-mitten"></i></label>
+                                <input type="radio" name="modalidade" id="futebol">
+                                <label for="futebol">Futebol <i class="fa-solid fa-futbol"></i></label>
+                                <input type="radio" name="modalidade" id="basquetebol">
+                                <label for="basquetebol">Basquetebol <i class="fa-solid fa-basketball"></i></label>
+                                <input type="radio" name="modalidade" id="mistura">
+                                <label for="mistura">Combinei várias modalidades <i class="fa-brands fa-mixer"></i></label>
+                            </nav>
+                            <h5 style="margin-block-start: 1rem;">Usado para entender as suas preferências de apostas</h5>
+                        </nav>
+
+                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+                        <nav class="contentInputForm">
+                            <h4>Carregue aqui o palpite...</h4>
+                            <nav class="navContentFile">
+                                <nav>
+                                    <input type="file" id="ficheiro" name="ficheiro" accept="image/*,application/pdf">
+                                    <label for="ficheiro">
+                                        <nav id="navCarregarFicheiro">
+                                            <i class="fa-solid fa-upload" style="color: white; font-size: 20pt;"></i>
+                                            <p style="color: gray;">Clique aqui para carregar o palpite (fotografia ou PDF)</p>
+                                        </nav>
+                                        <div id="preview" style="margin-top: 10px; display: none;"></div>
+                                    </label>
+                                </nav>
+                            </nav>
+                            <h5 style="text-align: center;">Será usado para o registro visual da aposta/palpite real feita por você</h5>
+                        </nav>
+
+                        <nav class="contentInputForm" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                            <h4>Conte-nos sobre esse palpite certeiro...</h4>
+                            <nav class="navContentTextArea">
+                                <nav>
+                                    <textarea name="" id="" placeholder="Meu palpite é..."></textarea>
+                                </nav>
+                            </nav>
+                            <h5 style="text-align: center;">Queremos entender o teu racicínio, poderá ser útil para o nosso software brevemente</h5>
+                        </nav>
+                    </div>
+
+                        <nav class="contentInputForm">
+                            <nav class="navContentCheck">
+                                <nav>
+                                    <input type="checkbox" name="" id="">
+                                </nav>
+                                <nav>
+                                    <span>Aceito e autorizo o tratamento e uso de todas as informações fornecidos por mim conforme a <a href="views/politica.html" rel="noopener noreferrer nofollow">Política de Privacidade</a> e os <a href="views/termos.html" rel="noopener noreferrer nofollow">Termos e Condições</a> da 777PY</span>
+                                </nav>
+                            </nav>
+                        </nav>
+
+                        <nav>
+                            <nav class="navBtns navBtnsForm">
+                                <a href="#"><button class="btn btn0" id="cancelarForm">Cancelar</button></a>
+                                <a href="#"><button class="btn">Palpitar Agora <i class="fa-solid fa-paper-plane"></i></button></a>
+                            </nav>
+                        </nav>
+
+                    </nav>
+                </div>
+            </form>
+        </div>
+
         <section class="secao1">
             <nav>
                 <h1 id="titleHero">Prevemos o <span class="textoEfeito">futuro!</span> O seu <span class="textoEfeito">palpite,</span> a nossa <span class="textoEfeito">ciência.</span></h1>
@@ -187,7 +304,7 @@
 
                     <p class="paragrafosSecao3">O número 777 na tradição cristã representa perfeição, totalidade e conclusão (comos os 7 dias da criação). Repetido três vezes, o 777 é visto como a manifestação mais pura da perfeição divina. Na matemática, é um número palíndromo, ou seja, lido da mesma forma de trás para frente. Na base binária, é representada como 1100001001, em algarismos romanos como DCCLXXVII. Se quiseres saber mais, junte-se a nossa startup... hahaha</p>
 
-<p class="paragrafosSecao3">Se chegaste até a 777PY, é porque dentro de ti existe um sonhador, um pensador, um estratega, um visionário. Se estás aqui, és alguém que vê o jogo diferente, que sente o momento, analisa, conecta os pontos e transforma palpite em 2.5 milhões em 10 dias. Acreditamos no teu talento, na tua leitura de jogo, na tua coragem e na tua vontade de ser milionário em 10 dias. Entra nessa desafio com confiança, mostre o teu raciocínio. Se vence agindo, o teu palpite é o teu maior trunfo e faz ela valer 2.500.000 Kzs.</p>
+                    <p class="paragrafosSecao3">Se chegaste até a 777PY, é porque dentro de ti existe um sonhador, um pensador, um estratega, um visionário. Se estás aqui, és alguém que vê o jogo diferente, que sente o momento, analisa, conecta os pontos e transforma palpite em 2.5 milhões em 10 dias. Acreditamos no teu talento, na tua leitura de jogo, na tua coragem e na tua vontade de ser milionário em 10 dias. Entra nessa desafio com confiança, mostre o teu raciocínio. Se vence agindo, o teu palpite é o teu maior trunfo e faz ela valer 2.500.000 Kzs.</p>
                 </nav>
             </div>
         </section>
@@ -428,8 +545,6 @@
             </nav>
         </section>
 
-        <!-- A SEÇÃO 6 FOI PARA CIMA HAHAHA -->
-
         <section class="secao secao7">
             <h4 class="textoSecao7">Se ainda tiver <span class="textoGradiente">dúvidas</span> ou precisar de mais <span class="textoGradiente">esclarecimentos</span>, você pode assistir o <span class="textoGradiente">vídeo explicativo</span> <span class="textoGradiente">criado </span>especialmente <span class="textoGradiente">para você</span>.</h4>
             <nav class="navVideoExplicativo">
@@ -460,6 +575,10 @@
         </footer>
     </main>
 
+<script>
+ 
+</script>
 
+</script>
 </body>
 </html>

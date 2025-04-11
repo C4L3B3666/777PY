@@ -68,3 +68,59 @@ threshold: 0.5
 });
 
 cards.forEach(card => observer.observe(card));
+
+
+
+
+const input = document.getElementById('ficheiro');
+const navCarregar = document.getElementById('navCarregarFicheiro');
+const preview = document.getElementById('preview');
+
+input.addEventListener('change', () => {
+  preview.innerHTML = ''; // limpa preview anterior
+
+  if (input.files.length > 0) {
+    const file = input.files[0];
+
+    if (file.type.startsWith('image/')) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      img.style.maxWidth = '250px';
+      img.style.borderRadius = '10px';
+      img.style.marginTop = '10px';
+      img.style.border = '2px solid #40E194';
+      preview.appendChild(img);
+      preview.style.display = "block"
+      navCarregar.style.display = "none";
+      
+  } else if (file.type === 'application/pdf') {
+      preview.style.display = "block"
+      const texto = document.createElement('p');
+      texto.textContent = `📄 PDF carregado com sucesso: ${file.name}`;
+      texto.style.color = '#40E194';
+      texto.style.marginTop = '10px';
+      preview.appendChild(texto);
+      navCarregar.style.display = "none";
+    } else {
+      const erro = document.createElement('p');
+      erro.textContent = 'Tipo de ficheiro não suportado.';
+      erro.style.color = 'red';
+      preview.appendChild(erro);
+    }
+  }
+});
+
+
+const mostraForm = document.getElementById("MostrarFomEnviar");
+mostraForm.addEventListener("click", () => {
+    var telaForm = document.getElementById("divEnviarPalpite");
+    telaForm.classList.add("activo")
+    document.querySelector("body").style.overflowY = "hidden"
+    
+})
+const cancelarForm = document.getElementById("cancelarForm");
+cancelarForm.addEventListener("click", () => {
+    var telaForm = document.getElementById("divEnviarPalpite")
+    telaForm.classList.remove("activo")
+    document.querySelector("body").style.overflowY = "scroll"
+})
