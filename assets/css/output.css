@@ -4,6 +4,7 @@
 /* #212121; */
 /* #2E2C2C; */
 /* #4D4B4B */
+/* #13CD45 */
 
 * {
     margin: 0;
@@ -47,6 +48,10 @@ body {
     justify-content: space-between;
 }
 
+.menu .menuHamburguer {
+    display: none;
+}
+
 .menu a {
     text-decoration: none;
 }
@@ -88,6 +93,10 @@ sup {
     background: #212121;
     border: 1px solid #2E2C2C;
     box-shadow: 0 0 4px #2E2C2C;
+}
+
+.navBtnsNav2Menu {
+    display: none;
 }
 
 .btn {
@@ -431,10 +440,10 @@ sup {
 }
 
 .CardFundador .statusFundador {
-    font-family: "Libre Franklin";
+    color: gray;
     font-weight: bold;
     padding-block: .4rem;
-    color: rgba(77, 75, 75);
+    font-family: "Libre Franklin";
 }
 
 .CardFundador .sobreFundador {
@@ -642,6 +651,8 @@ footer nav:nth-child(3) a:hover {
     opacity: 1;
     pointer-events: all;
     transform: translateY(0%);
+    pointer-events: all;
+    transform: translateY(0%);
 }
 
 .primeirosInputs {
@@ -656,8 +667,6 @@ footer nav:nth-child(3) a:hover {
     background: #212121;
     border: 2px solid #2E2C2C;
     display: flex;
-    border-radius: 10px;
-    padding: 1rem;
     align-items: top;
     justify-content: space-around;
 }
@@ -665,7 +674,6 @@ footer nav:nth-child(3) a:hover {
 
 #divEnviarPalpite form div.imgForm img {
     width: 450px;
-    border-radius: 10px;
     filter: grayscale(100%);
     transition: all .3s ease-in-out;
 }
@@ -836,26 +844,241 @@ form .linkLogoForm {
     text-decoration: none;
 }
 
+.DivInputContePalpite {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 1rem;
+}
+
 /* Esconde os elementos inicialmente */
 .slide-left, .slide-right {
     opacity: 0;
     transition: all 0.8s ease-out;
-  }
+}
   
   /* Slide da esquerda (texto) */
-  .slide-left {
+.slide-left {
     transform: translateX(-100px);
-  }
-  .slide-left.show {
+}
+.slide-left.show {
     opacity: 1;
     transform: translateX(0);
-  }
+}
   
   /* Slide da direita (imagem) */
-  .slide-right {
+.slide-right {
     transform: translateX(100px);
-  }
-  .slide-right.show {
+}
+.slide-right.show {
     opacity: 1;
     transform: translateX(0);
-  }
+}
+
+@media screen and (max-width: 768px) {
+
+    #cursor {
+        display: none;
+    }
+
+    .menu {
+        margin: 0;
+        width: 100vw;
+        border: none;
+        border-radius: 0;
+    }
+
+    .menu .menuHamburguer {
+        display: flex;
+        cursor: pointer;
+        z-index: 1000;
+        padding: .5rem;
+        flex-direction: column;
+    }
+
+    .menu .menuHamburguer .linha {
+        background: #40E194;
+        width: 30px;
+        position: relative;
+        margin: .2rem;
+        height: 4px;
+        transition: all 5s ease .2s;
+        border-radius: 9999px;
+    }
+
+    .menu.active .menuHamburguer .linha:nth-child(2) {
+        right: .7rem;
+    }
+
+    .menu .navLinksMenu {
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+        justify-content: space-between;
+    }
+
+    .menu .navMobilePorra {
+        display: flex;
+        height: 100vh;
+        top: 0;
+        align-items: center;
+        right: 0;
+        text-align: center;
+        width: 100vw;
+        clip-path: circle(100px at 90% -15%);
+        pointer-events: none;
+        background: black;
+        justify-content: space-around;
+        position: absolute;
+        flex-direction: column;
+        transition: all 1s ease-out .2s;
+    }
+    
+    .menu.active .navMobilePorra {
+        pointer-events: all;
+        clip-path: circle(1500px at 90% -15%);
+    } 
+
+    .menu nav:nth-child(1) {
+        z-index: 100;
+    }
+
+    .menu a h1 {
+        font-size: 22pt;
+    }
+
+    .secao1 {
+        flex-direction: column;
+        padding-inline: 3rem;
+        padding-top: 5rem;
+        height: 100%;
+    }
+
+    .secao1 nav #titleHero {
+        font-size: 24pt;
+    }
+    
+    .secao1 nav:nth-child(2) img {
+        width: 100%;
+    }
+
+    .slide-left, .slide-right {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    } 
+
+    .secao .divTopoSecao {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .secao3 {
+        background: 30% 100% / cover no-repeat url("../img/bg1.png");
+    }
+    
+    .secao3 .conteudoSecao3 { 
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    
+    .secao3 .conteudoSecao3 nav {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .secao3 .conteudoSecao3 nav p {        
+        font-size: 14pt;
+        text-align: center;
+    }
+    .secao6 .textoImpactante, .secao7 .textoSecao7, .navTextoSecao8 h4 {
+        width: 100%;
+        font-size: 20pt;
+    }
+    
+    .videoExplicativo {
+        width: 100%;
+    }
+
+    #divEnviarPalpite {
+        padding: 1rem;
+        overflow-y: scroll;
+    }
+    
+    #divEnviarPalpite form {
+        height: 100vh;
+        top: 0;
+        margin-block-end: 5rem;
+        overflow-y: scroll;
+    }
+
+    #divEnviarPalpite form div.imgForm  {
+        display: none;
+    }
+
+    #divEnviarPalpite form div:nth-child(2) {
+        gap: 2rem;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form div:nth-child(2) nav h3 {
+        font-size: 14pt;
+        font-family: "Geist";
+    }
+    
+    form .contentInputForm {
+        margin-block: .5rem;
+        position: relative;
+    }
+    
+    form .contentInputForm h4 {
+        font-family: "Geist";
+        color: #40E194;
+    }
+    
+    form .navInputFormRadio {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .4rem;
+        justify-content: center;
+    }
+    
+    .DivInputContePalpite {
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .contentInputForm .navContentTextArea textArea {
+        width: 100%;
+    }
+
+    .primeirosInputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-conten: center;
+    }
+    
+    .navBtnsForm {
+        position: relative;
+        bottom: 0;
+        margin: 2rem;
+        right: 10%;
+    }
+
+    .navContentCheck nav span {
+        font-size: 10pt;
+    }
+
+ }

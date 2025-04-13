@@ -138,3 +138,11 @@ const observer1 = new IntersectionObserver(entries => {
 document.querySelectorAll('.slide-left, .slide-right').forEach(el => {
   observer1.observe(el);
 });
+
+
+var menuHamburguer = document.querySelector(".menuHamburguer") 
+
+menuHamburguer.addEventListener("click", () => {
+  var menu = document.querySelector(".menu");
+  menu.classList.toggle("active");
+})
