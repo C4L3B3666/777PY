@@ -146,3 +146,11 @@ menuHamburguer.addEventListener("click", () => {
   var menu = document.querySelector(".menu");
   menu.classList.toggle("active");
 })
+
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  preloader.style.opacity = "0";
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 500); // Tempo para desaparecer suavemente
+});
