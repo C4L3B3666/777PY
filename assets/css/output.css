@@ -14,6 +14,7 @@
 
 body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 #cursor {
@@ -192,6 +193,7 @@ sup {
     color:#9c9696;
 }
 
+
 .secao2 .conteudoSecao {
     display: flex;
     width: 75%;
@@ -203,10 +205,10 @@ sup {
     align-items: center;
     justify-content: center;
     transition: height .4s ease .2s;
-}
+} 
 
 .secao2 .conteudoSecao.active {
-    height: 900px;
+    height: max-content;
 }
 
 .secao2 .conteudoSecao .cardFunciona {
@@ -221,7 +223,7 @@ sup {
     padding: 1rem;
     background: #212121;
     border: 2px solid #2E2C2C;
-}
+} 
 
 .secao2 .cardFunciona .numeroFunciona {
     position: absolute;
@@ -909,7 +911,15 @@ form .linkLogoForm {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+
+    clip-path: circle(100% at 50% 50%); /* Inicialmente um círculo que cobre toda a tela */
+    transition: clip-path 1s ease-in-out; /* Adiciona uma transição suave */
   }
+
+  #preloader.hide {
+    clip-path: circle(100px at 90% -25%);
+    pointer-events: none; /* Evita que o preloader bloqueie interações */
+}
   
   .preloader-container {
     text-align: center;
@@ -920,12 +930,14 @@ form .linkLogoForm {
     height: 80px;
     object-fit: contain;
     margin-bottom: 20px;
+    image-rendering: pixelated;
   }
   
   .preloader-text {
     font-family: 'Geist';
     font-weight: bold;
     font-size: 24pt;
+    text-align: center;
     color: gray;
   }
   

@@ -3,7 +3,6 @@ var verMais = document.querySelector(".navVerMaisFunciona")
 verMais.addEventListener("click", ()=> {
     var conteudo = document.querySelector(".secao2 .conteudoSecao")
     conteudo.classList.toggle("active")
-    
     verMais.innerHTML = "<button class='btn'>Ocultar</button>"
 })
 
@@ -149,8 +148,5 @@ menuHamburguer.addEventListener("click", () => {
 
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
-  preloader.style.opacity = "0";
-  setTimeout(() => {
-    preloader.style.display = "none";
-  }, 500); // Tempo para desaparecer suavemente
+  preloader.classList.add("hide");
 });
