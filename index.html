@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-AO">
+<html lang="pt-AO" draggable="false">
 <head>
     <meta charset="UTF-8"> 
     <script src="assets/js/script.js" defer></script>
@@ -22,11 +22,11 @@
     <meta name="description" content="Antecipe resultados com o 777py - software de previsões desportivas, políticas e climáticas baseado em ciência, matemática e inteligência artificial.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body draggable="false">
     <div id="preloader">
         <div class="preloader-container">
-          <img src="assets/img/loader.gif" alt="Carregando..." class="preloader-gif" />
-          <p class="preloader-text">Os seus <span style="color: #40E194;">2.5 milhões</span> estão quase prontos...</p>
+          <img src="assets/img/loader.gif" alt="Carregando..." class="preloader-gif" draggable="false">
+          <p class="preloader-text">Os seus <span class="textoColoridoVerde">2.5 milhões</span> estão quase prontos<span class="textoColoridoVerde">...</span></p>
         </div>
       </div>
 
@@ -34,11 +34,13 @@
     
     <header class="menu">
         <nav>
-            <a href="./index.html" rel="noopener noreferrer nofollow"><img src="assets/img/logo.png" alt="imagem da logo do 777PY" srcset="assets/img/logo.png" class="imgLogoMenu"></a>
+            <a href="./" rel="noopener noreferrer nofollow">
+                <img src="assets/img/logo.png" alt="imagem da logo do 777PY" srcset="assets/img/logo.png" class="imgLogoMenu" draggable="false">
+            </a>
         </nav>
         <nav class="navMobilePorra">
             <nav class="navLinksMenu">
-                <a href="#"rel="_top" class="linksMenu">Página Inicial</a>
+                <a href="./#" rel="_top" class="linksMenu">Página Inicial</a>
                 <a href="#comoFunciona" class="linksMenu" rel="noopener noreferrer nofollow">Como funciona?</a>
                 <a href="#quemPodeParticipar" class="linksMenu" rel="noopener noreferrer nofollow">Posso participar?</a>
                 <a href="#sobreNos" class="linksMenu" rel="noopener noreferrer nofollow">Quem somos?</a>
@@ -55,31 +57,33 @@
         </nav>
     </header>
 
-    <main class="hero">
+    <main class="hero" style="flex">
         
-        <div id=divEnviarPalpite>
+        <div id="divEnviarPalpite">
             <form action="#">
                 <div class="imgForm">
-                    <img src="assets/img/img0.jpg" alt="" srcset="">
+                    <img src="assets/img/img_form.jpg" alt="imagem do formulário" srcset="assets/img/img_form.jpg">
                 </div>
                 <div>
                     <nav>
-                        <a href="#" class="linkLogoForm"><h3 style="font-size: 17pt;">777<sup>PY</sup></h3></a>
-                        <h3 style="color: gray;">Bem-vindo! Lembre-se que <span style="color: #40E194;"> teu palpite pode mudar a tua vida</span> em apenas 10 dias e que na 777 o <span style="color: #40E194;">teu palpite vale 2.5 milhões </span> de kwanzas. <i class="fa-solid fa-heart" style="color: #40E194;"></i></h3>
+                        <nav>
+                            <a href="./" rel="noopener noreferrer nofollow" class="linkLogoForm"><img src="assets/img/logo.png" alt="" srcset=""></a>
+                        </nav>
+                        <h3 style="color: gray;">Bem-vindo! Lembre-se que <span class="textoColoridoVerde"> teu palpite pode mudar a tua vida</span> em apenas 10 dias e que na 777 o <span class="textoColoridoVerde">teu palpite vale 2.5 milhões </span> de kwanzas. <i class="fa-solid fa-heart textoColoridoVerde"></i></h3>
                     </nav>
                     <nav>
                         <div class="primeirosInputs">
 
                         <nav class="contentInputForm">
                             <nav class="navInputFormText">
-                                <input type="text" placeholder=" " id="nomeCompleto">
+                                <input type="text" placeholder=" " id="nomeCompleto" required>
                                 <label for="nomeCompleto">Nome Completo</label>
                             </nav>
                             <h5>Será usado para a sua identificação formal</h5>
                         </nav>
                         <nav class="contentInputForm">
                             <nav class="navInputFormText">
-                                <input type="text" placeholder=" " id="apelido">
+                                <input type="text" placeholder=" " id="apelido" required>
                                 <label for="apelido">Apelido / Nome Fictício</label>
                             </nav>
                             <h5>Será usado para a sua identificação anónima</h5>
@@ -91,12 +95,12 @@
                                 <input type="text" placeholder=" " id="email">
                                 <label for="email">E-mail</span>
                             </nav>
-                            <h5>Contato direito ou aviso de premiação ou envio (Opcional)</h5>
+                            <h5>Contato direito ou aviso de premiação (Opcional)</h5>
                         </nav>
 
                         <nav class="contentInputForm">
                             <nav class="navInputFormText">
-                                <input type="text" placeholder=" " id="telefone">
+                                <input type="text" placeholder=" " id="telefone" required>
                                 <label for="telefone">Número de Telefone</span>
                             </nav>
                             <h5>Contato direto para confirmação de dados ou aviso de premiação</h5>
@@ -170,16 +174,15 @@
 
         <section class="secao1">
             <nav class="slide-left">
-                <h1 id="titleHero">Prevemos o <span class="textoEfeito">futuro!</span> O seu <span class="textoEfeito">palpite,</span> a nossa <span class="textoEfeito">ciência.</span></h1>
-                <p id="textoHero">A <span style="font-weight: 500; font-family: 'Libre Franklin';">777<sup>PY</sup></span> está dando uma chance real e única: transformar os teus palpites em reconhecimento, oportunidade e recompensa de verdade. Aqui, a tua intuição, estratégia e palpite viram ciência. Enquanto muitos apostam no escuro e perdem dinheiro, você usa <span style="font-weight: 500;">777</span> com estratégia, foco e coragem. E em apenas 10 dias ganharás 2.500.000 de kwanzas. A pergunta é simples: <span class="textoGradiente" style="font-weight: bold;">Vais continuar a sonhar… ou vais fazer acontecer com a 777PY?</span></p>
+                <h1 id="titleHero" draggable="false">Prevemos o <span class="textoEfeito">futuro!</span> O seu <span class="textoEfeito">palpite,</span> a nossa <span class="textoEfeito">ciência.</span></h1>
+                <p id="textoHero">Se chegaste até a <span style="font-weight: 500; font-family: 'Libre Franklin';">777<sup>PY</sup></span>, é porque dentro de ti existe um sonhador, um pensador, um visionário. Se estás aqui, és alguém que vê o jogo diferente, que sente o momento, analisa, conecta os pontos e <span class="textoColoridoVerde textoBold">transforma palpite em 2.5 milhões em apenas 10 dias</span>. Acreditamos no teu talento, na tua leitura de jogo, na tua coragem e na tua vontade de ser milionário em 10 dias. Entra nesse desafio com confiança, mostre o teu raciocínio. A pergunta é simples: <span class="textoGradiente" style="font-weight: bold;">Vais continuar a sonhar… ou se tornarás milionário em 10 dias?</span></p>
                 <nav class="navBtns">
                     <a href="#"><button class="btn btn0">Saiba Mais</button></a>
                     <a href="#video"><button class="btn">Assistir Vídeo Explicativo <i class="fa-solid fa-circle-play"></i></button></a>
                 </nav>
             </nav>
             <nav class="slide-right">
-                <!-- <img src="assets/img/img.gif" alt="" srcset=""> -->
-                <img src="assets/img/hero4.gif" alt="" srcset="">
+                <img src="assets/img/img_hero.gif" alt="imagem principal da página inicial" srcset="" draggable="false">
             </nav>
         </section>
 
@@ -187,7 +190,7 @@
             <div class="divTopoSecao">
                 <nav>
                     <h2 class="tituloSecao">Saiba<span class="textoSemEfeito"> Como Funciona.</span></h2>
-                    <p class="textoSecao">Estamos à tua espera — e acreditamos que o teu palpite vale ouro. 777 é um verdadeiro teste de visão, estratégia e coragem. Na 777 cada escolha conta, cada detalhe importa. Aqui, você tem a total liberdade para mostrares o teu talento nas modalidades que dominas. Mostre que és diferente!</p>
+                    <p class="textoSecao">Estamos à tua espera — e acreditamos que o teu palpite vale ouro. 777 é um verdadeiro teste de visão, estratégia e coragem. Na 777 cada escolha conta, cada detalhe importa. Aqui, você tem a total liberdade para mostrares o teu talento nas modalidades que dominas.</p>
                 </nav>
                 <nav>
                     <p class="textoSecaoLado">Acreditamos em você e na tua estratégia que o ajudará a <span class="textoColorido">ganhar milhões de kwanzas</span> em 10 dias. Junte-se a <span class="textoColorido">777PY</span> e mostre o poder da tua <span class="textoColorido">intuição, raciocínio e palpites.</span> Transforme em conquistas <span class="textoColorido">reais e lucrativas.</span></p>
@@ -207,7 +210,7 @@
                         <h4>Crie palpites certeiros</h4>
                     </nav>
                     <nav>
-                        <p class="textoFunciona">Crie os teus palpites nas modalidades que dominas: futebol, boxe ou basquetebol. Dentro dessas categorias, és livre para escolher o mercado (código): 1x2, totais, handicaps, etc. Decide se queres uma aposta simples, múltipla ou até mesmo construída. Tu é que mandas!.</p>
+                        <p class="textoFunciona">Crie os teus palpites certeiros nas modalidades que dominas: <span class="textoBold">futebol, boxe </span> ou <span class="textoBold">basquetebol</span>. Dentro dessas categorias, és livre para <span class="textoBold">escolher o mercado (código):</span> 1x2, totais, handicaps, etc. Decide se queres uma aposta simples, múltipla ou até mesmo construída. <span class="textoBold">Você é que manda!</span></p>
                     </nav>
                 </nav>
 
@@ -222,7 +225,7 @@
                         <h4>Verifique as odds/pontos</h4>
                     </nav>
                     <nav>
-                        <p class="textoFunciona">Antes de enviar, verifica se o total de odds está entre 4 e 10 pontos — abaixo de 4 ou acima de 10 será inválido! Recomendamos sempre revisar as odds antes de enviar, garantindo que o palpite esteja dentro do intervalo exigido, um bom palpite começa numa boa análise.</p>
+                        <p class="textoFunciona">Antes de enviar, verifica se o <span class="texttoBold">total de odds</span> está <span class="textoBold">entre 4</span> e <span class="textoBold">10 pontos</span> — abaixo de 4 ou acima de 10 será inválido! Recomendamos sempre <span class="textoBold">revisar as odds antes de enviar</span>, garantindo que o palpite esteja dentro do intervalo exigido, <span class="textoBold">um bom palpite começa numa boa análise.</span></p>
                     </nav>
                 </nav>
 
@@ -237,7 +240,7 @@
                         <h4>Envie o seu palpite certeiro</h4>
                     </nav>
                     <nav>
-                        <p class="textoFunciona">Com os jogos escolhidos e o total de odds certo, é hora de enviar o teu palpite. Podes fazer isso de três formas: digitando, enviando uma captura de ecrã (print), ou apenas mandando o ID. Usa o canal que preferires — Website, WhatsApp, e-mail ou Facebook — e estás dentro do desafio!</p>
+                        <p class="textoFunciona">Com os jogos escolhidos e o total de odds certo, é <span class="textoBold">hora de enviar o teu palpite.</span>. Podes fazer isso de três formas: <span class="textoBold">digitando, enviando uma captura de ecrã (print)</span> ou apenas <span class="textoBold">mandando o ID</span>. Usa o canal que preferires — Website, WhatsApp, e-mail ou Facebook —  <span class="textoBold">e estás dentro do desafio!</span></p>
                     </nav>
                 </nav>
                 
@@ -252,7 +255,7 @@
                         <h4>Faça durante 10 dias</h4>
                     </nav>
                     <nav>
-                        <p class="textoFunciona">Depois de enviares o teu primeiro palpite, continua firme no desafio por 10 dias consecutivos. Durante esse tempo, acompanha cada palpite enviado com atenção. Se acertares todos, além de poderes ser convidado a trabalhar connosco na 777PY, ainda ganhas 2.500.000 Kz (2.5 milhões de kwanzas) — no ato!</p>
+                        <p class="textoFunciona">Depois de enviares o teu primeiro palpite, <span class="textoBold">continua firme</span> no desafio <span class="textoBold">por 10 dias consecutivos.</span> Durante esse tempo, acompanha cada palpite enviado com atenção. <span class="textoBold">Se acertares todos,</span> além de poderes ser convidado a <span class="textoBold">trabalhar</span> connosco <span class="textoBold">na 777PY e </span>ainda <span class="textoBold">ganhas 2.500.000 Kzs</span> (2.5 milhões de kwanzas) — no ato!</p>
                     </nav>
                 </nav>
 
@@ -267,7 +270,7 @@
                         <h4>Torne-se milionário em 10 dias</h4>
                     </nav>
                     <nav>
-                        <p class="textoFunciona">Acertaste os 10 dias? Parabéns, você ganhou 2.5 milhões em 10 dias. Mesmo que haja 10 ganhadores, todos recebem o valor completo, sem divisão ou redução. Atenção: se errar 2 ou mais palpites durante o desafio, poderás ser desclassificado ou ter o prémio ajustado conforme o teu desempenho.</p>
+                        <p class="textoFunciona"><span class="textoBold">Acertaste os 10 dias?</span> Parabéns, você é um <span class="textoBold">milionário em apenas 10 dias </span>oficialmente. <span class="textoBold">Mesmo que haja 10 ganhadores, todos recebem o valor completo, sem divisão ou redução.</span></p> <br> <p class="textoFunciona"> <span class="textoBold">Atenção:</span> Se errar 1 dia, poderás ser desclassificado ou ter o prémio ajustado <span class="textoBold">dependendo do teu desempenho.</span></p>
                     </nav>
                 </nav>
 
@@ -282,7 +285,7 @@
                         <h4>Informações extras</h4>
                     </nav>
                     <nav>
-                        <p class="textoFunciona">Durante o desafio ou na fase de avaliação, a nossa equipa poderá solicitar informações pessoais básicas. Esses dados servem apenas para identificar corretamente os participantes e garantir que os prémios sejam entregues com segurança. Garantimos total segurança e uso exclusivo das tuas informações apenas para fins relacionados ao 777PY</p>
+                        <p class="textoFunciona">Durante o desafio ou na fase de avaliação, a <span class="textoBold">nossa equipe poderá solicitar informações pessoais</span> básicas. Esses dados servem apenas <span class="textoBold">para identificar</span> corretamente os <span class="textoBold">participantes </span>e garantir que os prémios sejam entregues com segurança. Garantimos total segurança e uso exclusivo das tuas informações apenas para fins relacionados ao 777PY</p>
                     </nav>
                 </nav>
 
@@ -299,7 +302,7 @@
                     <p class="textoSecao">Sabemos que, de acordo a lei angolana, menores de idade não podem participar em apostas ou jogos de azar. Esclarecemos que 777 não é uma casa de aposta, nem promove jogos de azar. Promovemos uma pesquisa cientifíca e experimentos que visam aprimorar, otimizar, treinar o nosso software e analisar como pessoas de diferentes idades lidam com decisões baseadas em probabilidades. O único compromisso exigido é o seu palpite certeiro.</p>
                 </nav>
                 <nav>
-                    <p class="textoSecaoLado">Todos podem participar, é um desafio abrangente e inclusivo. Não proibições de <span class="textoColorido">idade, género, habilidades, nacionalidade ou preferências desportivas.</span> Esperamos por si e pelos seus palpites</p>
+                    <p class="textoSecaoLado">Todos podem participar, é um desafio abrangente e inclusivo. Não proibições de <span class="textoColorido">idade, género, habilidades, nacionalidade ou preferências desportivas.</span> Esperamos por si e pelos seus palpites.</p>
                 </nav>
             </div>
 
@@ -320,7 +323,7 @@
             <div class="divTopoSecao">
                 <nav>
                     <h2 class="tituloSecao">Conheça a <span class="textoSemEfeito">777<sup style="color: #40E194; -webkit-text-stroke: #40E194;">PY</sup></span></h2>
-                    <p class="textoSecao">777PY é projeto científico 100% angolano, idealizada e fundada por jovens angolanos apaixonados por tecnologia, matemática e ciência. Nasceu de uma visão ousada: transformar a intuição e o conhecimento dos palpiteiros em dados valiosos no universo das estátisticas e previsões de diferentes eventos. O nome "777PY" carrega dois símbolos poderosos: 777 é um número que carrega significados profundos em - espiritualidade, cultura, matemática, religião, simbologia e até no mundo dos jogos - é considerado um número matematicamente fascinante e divinamente perfeito. O "PY" é homenagem ao Python, a linguagem de programação usada nos nossos algoritmos e análises.</p>
+                    <p class="textoSecao">É um projeto e startup <span class="textoBold">100% angolana</span>, idealizada e fundada por jovens angolanos apaixonados por tecnologia, matemática e ciência. Nasceu de uma visão ousada: transformar a intuição e o conhecimento dos palpiteiros em dados valiosos no universo das estátisticas e previsões de diferentes eventos. O nome "<span style="font-weight: 500; font-family: 'Libre Franklin';">777<sup>PY</sup></span>" carrega dois símbolos poderosos: <span class="textoBold" style="font-family: 'Libre Franklin';">777</span> é um número que carrega significados profundos em - espiritualidade, cultura, matemática, religião, simbologia e até no mundo dos jogos - é considerado um número matematicamente fascinante e divinamente perfeito. O <span class="textoBold textoColoridoVerde">PY</span> é homenagem a Python, a linguagem de programação usada nos nossos algoritmos e análises.</p>
                 </nav>
                 <nav>
                     <p class="textoSecaoLado">A nossa equipe é uma combinação de <span class="textoColorido">nerds, cientistas da computação, programadores, designers, matemáticos e teóricos de estatísticas.</span> Juntos, acreditamos podemos criar algo grandioso e abrir<span class="textoColorido"> oportunidades reais a apostadores</span> talentosos e sonhadores. Aqui, <span class="textoColorido">o teu raciocínio</span> é valorizado.</p>
@@ -331,7 +334,7 @@
                 <nav class="CardFundador">
                     <div class="efeitoCard0 efeitoCard"></div>
                     <nav class="imgFundador">
-                        <img src="assets/img/fundador_calebe.png" alt="" srcset="">
+                        <img src="assets/img/fundador_calebe.png" alt="" srcset="" draggable="false">
                     </nav>
                     <nav class="nomeFundador">
                         Calebe "CL" Lukombo
@@ -346,7 +349,7 @@
                 <nav class="CardFundador">
                     <div class="efeitoCard2 efeitoCard"></div>
                     <nav class="imgFundador">
-                        <img src="assets/img/fundadora_maria.png" alt="" srcset="">
+                        <img src="assets/img/fundadora_maria.png" alt="" srcset="" draggable="false">
                     </nav>
                     <nav class="nomeFundador">
                         Maria Lumengo
@@ -361,7 +364,7 @@
                 <nav class="CardFundador">
                     <div class="efeitoCard4 efeitoCard"></div>
                     <nav class="imgFundador">
-                        <img src="assets/img/fundador_adilson.png" alt="" srcset="">
+                        <img src="assets/img/fundador_adilson.png" alt="" srcset="" draggable="false">
                     </nav>
                     <nav class="nomeFundador">
                         Adilson "AL" Lukombo
@@ -376,13 +379,13 @@
                 <nav class="CardFundador">
                     <div class="efeitoCard6 efeitoCard"></div>
                     <nav class="imgFundador">
-                        <img src="assets/img/fundador_nkosi.png" alt="" srcset="">
+                        <img src="assets/img/fundador_nkosi.png" alt="" srcset="" draggable="false">
                     </nav>
                     <nav class="nomeFundador">
                         Nkosi Simão
                     </nav>
                     <nav class="statusFundador">
-                        CEO e co-fundador
+                        Diretor de Marketing e fundador
                     </nav>
                     <nav class="sobreFundador">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis eaque quaerat sed ducimus hic repellendus reiciendis accusamus.</nav>
                     <div class="efeitoCard7 efeitoCard"></div>
@@ -391,13 +394,13 @@
                 <nav class="CardFundador">
                     <div class="efeitoCard8 efeitoCard"></div>
                     <nav class="imgFundador">
-                        <img src="assets/img/fundador_aguinaldo.png" alt="" srcset="">
+                        <img src="assets/img/fundador_aguinaldo.png" alt="" srcset="" draggable="false">
                     </nav>
                     <nav class="nomeFundador">
                         Aguinaldo "AG" Jacob
                     </nav>
                     <nav class="statusFundador">
-                        CEO e fundador
+                        Analista de Dados e fundador
                     </nav>
                     <nav class="sobreFundador">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis eaque quaerat sed ducimus hic repellendus reiciendis accusamus</nav>
                     <div class="efeitoCard9 efeitoCard"></div>
@@ -406,13 +409,13 @@
                 <nav class="CardFundador">
                     <div class="efeitoCard10 efeitoCard"></div>
                     <nav class="imgFundador">
-                        <img src="assets/img/fundador_nacho.png" alt="" srcset="">
+                        <img src="assets/img/fundador_nacho.png" alt="" srcset="" draggable="false">
                     </nav>
                     <nav class="nomeFundador">
                         Nacho
                     </nav>
                     <nav class="statusFundador">
-                        CEO e fundador
+                        Vice-Diretor e Fundador
                     </nav>
                     <nav class="sobreFundador">Fundamos o 777 porque queríamos mudar o jogo. Se você está aqui, é porque também carrega essa vontade de revolução: nas apostas e na própia vida.</nav>
                     <div class="efeitoCard11 efeitoCard"></div>
@@ -421,13 +424,13 @@
                 <nav class="CardFundador">
                     <div class="efeitoCard12 efeitoCard"></div>
                     <nav class="imgFundador">
-                        <img src="assets/img/fundador_alexandre.png" alt="" srcset="">
+                        <img src="assets/img/fundador_alexandre.png" alt="" srcset="" draggable="false">
                     </nav>
                     <nav class="nomeFundador">
                         Alexandre Afonso
                     </nav>
                     <nav class="statusFundador">
-                        CEO e Director de Marketing
+                        Fundador
                     </nav>
                     <nav class="sobreFundador">Somos jovens negros, africanos, sonhadores e criadores de um movimento ousado e transformador. Somos angolanos, somos o futuro, somos ciência!</nav>
                     <div class="efeitoCard13 efeitoCard"></div>
@@ -436,21 +439,18 @@
                 <nav class="CardFundador">
                     <div class="efeitoCard14 efeitoCard"></div>
                     <nav class="imgFundador">
-                        <img src="assets/img/fundadora_nalita.png" alt="" srcset="">
+                        <img src="assets/img/fundadora_nalita.png" alt="" srcset="" draggable="false">
                     </nav>
                     <nav class="nomeFundador">
-                        Nalita Kiambi
+                        Nalita Kiambi Rodrigues
                     </nav>
                     <nav class="statusFundador">
-                        Secretária e co-fundadora
+                        Secretária, Analista de Dados e fundadora
                     </nav>
                     <nav class="sobreFundador">Acredito que com o 777 e esse movimento podemos inspirar mais mulheres angolanas a se apaixonarem por números, códigos e pelo poder da ciência.</nav>
                     <div class="efeitoCard15 efeitoCard"></div>
                 </nav>
 
-            </div>
-            <div class="todosFundadores">
-                <button class="btn">Ver toda a equipe</button>
             </div>
         </section>
 
@@ -462,7 +462,7 @@
             <div class="divTopoSecao">
                 <nav>
                     <h2 class="tituloSecao">Perguntas <span class="textoSemEfeito">Frequentes</span></h2>
-                    <p class="textoSecao">Seja bem-vindo a nossa seção de Perguntas Frequentes (FAQ). Na 777PY, priorizamos a clareza, a transparência e o conhecimento científico. Sabemos que projetos inovadores como o nosso podem gerar dúvidas — e é exatamente por isso que criamos este espaço. Nossa equipe está pronta para responder todas as suas perguntas e fornecer suporte necessário para que você possa aproveitar ao máximo tudo o que o 777 tem a oferecer.</p>
+                    <p class="textoSecao">Essa é a nossa seção de Perguntas Frequentes (FAQ). Na 777PY, priorizamos a clareza, a transparência e o conhecimento científico. Sabemos que projetos inovadores como o nosso podem gerar dúvidas — e é exatamente por isso que criamos este espaço. Nossa equipe está pronta para responder todas as suas perguntas e fornecer suporte necessário para que você possa aproveitar ao máximo tudo o que o 777 tem a oferecer.</p>
                 </nav>
                 <nav>
                     <p class="textoSecaoLado">No entanto, naturalmente, entendemos que cada <span class="textoColorido">usuário</span> tem necessidades específicas. E, estamos sempre prontos para ajudar <span class="textoColorido">você</span>, caso a sua dúvida não esteja na área abaixo ou deseja saber mais sobre nosso projeto, nossa pesquisa ou qualquer outro aspecto do 777, não hesite e entre em contato connosco pelos <span class="textoColorido">canais oficiais</span> que você preferir.</p>
@@ -481,7 +481,7 @@
                 </nav>
                 <nav class="navPergunta">
                     <div class="efeitoPergunta"></div>
-                    <nav class="pergunta">Quanto custa para participar da pesquisa (desafio)?</nav>
+                    <nav class="pergunta">Quanto custa para participar?</nav>
                     <nav class="resposta">0.00 Kzs! A participação no desafio é totalmente gratuita. Também não é necessário pagar nada para enviar os seus palpites. Em momento algum você precisará pagar para participar.</nav>
                 </nav>
                 <nav class="navPergunta">
@@ -518,11 +518,11 @@
                 <nav class="navPergunta">
                     <div class="efeitoPergunta"></div>
                     <nav class="pergunta">O que acontece se eu errar os palpites?</nav>
-                    <nav class="resposta">Você estará imediatamente desqualificado e não será considerado para o prémio até qua novas rodadas sejam abertas ou a nossa equipe poderá considerar o seu desempenho elegível para uma segunda chance.</nav>
+                    <nav class="resposta">Você poderá estar imediatamente desqualificado e não será considerado para o prémio até qua novas rodadas sejam abertas ou a nossa equipe poderá considerar o seu desempenho elegível para uma segunda chance.</nav>
                 </nav>
                 <nav class="navPergunta">
                     <div class="efeitoPergunta"></div>
-                    <nav class="pergunta">A pesquisa (desafio) é apenas desportiva?</nav>
+                    <nav class="pergunta">O desafio é somente desportivo?</nav>
                     <nav class="resposta">Não! Mas, na fase inicial (t=0), a pesquisa é exclusivamente desportivas. Os desafios para as predições em eventos climáticos e políticos serão anunciados brevemente pelos canais oficiais da nossa startup.</nav>
                 </nav>
 
@@ -567,7 +567,9 @@
 
         <footer>
             <nav>
-                <a href="#" rel="_top noopener noreferrer nofollow"><img src="assets/img/logo.png" alt="logo da 777PY" srcset="assets/img/logo.png"></a>
+                <a href="./#" rel="_top noopener noreferrer nofollow">
+                    <img src="assets/img/logo.png" alt="logo da 777PY" srcset="assets/img/logo.png" draggable="false">
+                </a>
             </nav>
             <nav>
                 <a href="./views/termos.html" rel="noopener noreferrer nofollow">Termos e Condições</a>

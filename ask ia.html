@@ -1,0 +1,74 @@
+Preciso de ajuda com uma seção no meu site, a `<section class="secao secao4">`, que contém múltiplos cards com a classe `.CardFundador`. Atualmente, eles ocupam muito espaço, como indicado pelo CSS inicial que usa `flex-wrap`, e gostaria de transformá-la em uma experiência de rolagem vertical mais interativa e organizada. A intenção é que os cards sejam dispostos em uma única coluna vertical e, à medida que o usuário rola a página para baixo, a área contendo esses cards se torne fixa ('sticky') dentro da janela de visualização (viewport) durante parte da rolagem. Enquanto essa área estiver fixa, a rolagem contínua deve fazer com que os cards seguintes apareçam sequencialmente, um de cada vez, de forma a sobrepor visualmente o card anterior, sendo importante que o card visível no topo pareça estático enquanto o próximo card rola por cima para cobri-lo. Este processo de sobreposição deve continuar até que o último card da sequência seja exibido. Peço, por favor, uma solução que utilize CSS moderno, preferencialmente a propriedade `position: sticky`, para criar este efeito de empilhamento visual, utilizando como ponto de partida a estrutura HTML e o CSS que forneci inicialmente.
+
+
+<section class="secao secao4" id="sobreNos">
+    <div class="divTopoSecao">
+        <!-- conteúdo textual divTopo -->
+    </div>
+    
+    <div class="conteudoSecao4">
+
+        <nav class="CardFundador">
+            <!-- conteúdo do card 1 -->
+        </nav>
+
+        <nav class="CardFundador">
+            <!-- conteúdo do card 2 -->
+        </nav>
+
+        <nav class="CardFundador">
+            <!-- conteúdo do card 3 -->
+        </nav>
+
+        <nav class="CardFundador">
+            <!-- conteúdo do card 4 -->
+        </nav>
+
+        <nav>
+            <!-- conteúdo do card 5 -->
+        </nav>
+
+        <nav class="CardFundador">
+            <!-- conteúdo do card  6-->
+        </nav>
+
+        <nav class="CardFundador">
+            <!-- conteúdo do card 7 -->
+        </nav>
+
+        <nav class="CardFundador">
+            <!-- conteúdo do card 8 -->
+        </nav>
+
+    </div>
+
+</section>
+
+
+<style>
+.conteudoSecao4 .CardFundador {
+    width: 25%;
+    margin: 1rem;
+    display: flex;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #2E2C2C;
+}
+
+.secao4 .conteudoSecao4 {
+    height: 625px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    transition: height .8s ease .2s;
+}
+
+</style>

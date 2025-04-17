@@ -6,13 +6,6 @@ verMais.addEventListener("click", ()=> {
     verMais.innerHTML = "<button class='btn'>Ocultar</button>"
 })
 
-var verFundadores = document.querySelector(".todosFundadores");
-verFundadores.addEventListener("click", () => {
-    var conteudo = document.querySelector(".secao4 .conteudoSecao4")
-    conteudo.classList.toggle("ativo")
-    verFundadores.innerHTML = "<button class='btn'>Ocultar</button>"
-})
-
 var verQuestoes = document.querySelector(".VerTodasQuestoes")
 verQuestoes.addEventListener("click", () => {
     var conteudo = document.querySelector(".secao5 .conteudoPerguntas")
@@ -150,3 +143,19 @@ window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   preloader.classList.add("hide");
 });
+
+const cardsFounder = document.querySelectorAll('.CardFundador');
+
+const observerFounder = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        } else {
+            entry.target.classList.remove('active');
+        }
+    });
+}, {
+    threshold: 0.8 // ativa quando 80% do card estiver visível
+});
+
+cardsFounder.forEach(card => observer.observe(card));
