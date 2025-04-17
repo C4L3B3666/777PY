@@ -57,7 +57,7 @@
         </nav>
     </header>
 
-    <main class="hero" style="flex">
+    <main class="hero">
         
         <div id="divEnviarPalpite">
             <form action="#">
@@ -77,16 +77,16 @@
                         <nav class="contentInputForm">
                             <nav class="navInputFormText">
                                 <input type="text" placeholder=" " id="nomeCompleto" required>
-                                <label for="nomeCompleto">Nome Completo</label>
+                                <label for="nomeCompleto">Nome Completo *</label>
                             </nav>
                             <h5>Será usado para a sua identificação formal</h5>
                         </nav>
                         <nav class="contentInputForm">
                             <nav class="navInputFormText">
                                 <input type="text" placeholder=" " id="apelido" required>
-                                <label for="apelido">Apelido / Nome Fictício</label>
+                                <label for="apelido">Apelido / Nome fictício *</label>
                             </nav>
-                            <h5>Será usado para a sua identificação anónima</h5>
+                            <h5>Apelido ou nome fictício para identificação pública</h5>
                         </nav>
                     <!-- </div> -->
                     
@@ -101,14 +101,14 @@
                         <nav class="contentInputForm">
                             <nav class="navInputFormText">
                                 <input type="text" placeholder=" " id="telefone" required>
-                                <label for="telefone">Número de Telefone</span>
+                                <label for="telefone">Número de Telefone *</span>
                             </nav>
                             <h5>Contato direto para confirmação de dados ou aviso de premiação</h5>
                         </nav>
                     </div>
 
                         <nav class="contentInputForm">
-                            <h4>O teu palpite inclui qual modalidade?</h4>
+                            <h4>O teu palpite inclui qual modalidade? *</h4>
                             <br>
                             <nav class="navInputFormRadio">
                                 <input type="radio" name="modalidade" id="boxe">
@@ -125,14 +125,14 @@
 
                         <div class="DivInputContePalpite">
                         <nav class="contentInputForm">
-                            <h4>Carregue aqui o palpite...</h4>
+                            <h4>Carregue aqui o palpite *...</h4>
                             <nav class="navContentFile">
                                 <nav>
-                                    <input type="file" id="ficheiro" name="ficheiro" accept="image/*,application/pdf">
+                                    <input type="file" id="ficheiro" name="ficheiro" accept="image/*,application/pdf" required>
                                     <label for="ficheiro">
                                         <nav id="navCarregarFicheiro">
                                             <i class="fa-solid fa-upload" style="color: white; font-size: 20pt;"></i>
-                                            <p style="color: gray; text-align: center;">Clique ou arraste um ficheiro aqui para carregar o palpite (fotografia ou PDF)</p>
+                                            <p style="color: gray; text-align: center;">Clique ou arraste um ficheiro aqui para carregar o palpite (imagem ou PDF) *</p>
                                         </nav>
                                         <div id="preview" style="margin-top: 10px; display: none;"></div>
                                     </label>
@@ -142,10 +142,10 @@
                         </nav>
 
                         <nav class="contentInputForm" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                            <h4>Conte-nos sobre esse palpite certeiro...</h4>
+                            <h4>Conte-nos sobre sua estratégia *...</h4>
                             <nav class="navContentTextArea">
                                 <nav>
-                                    <textarea name="" id="" placeholder="Meu palpite é..."></textarea>
+                                    <textarea name="" id="" placeholder="Porque você acredita neste palpite?" required></textarea>
                                 </nav>
                             </nav>
                             <h5 style="text-align: center;">Entender o teu racicínio, será ser útil para o nosso software brevemente</h5>
@@ -178,7 +178,7 @@
                 <p id="textoHero">Se chegaste até a <span style="font-weight: 500; font-family: 'Libre Franklin';">777<sup>PY</sup></span>, é porque dentro de ti existe um sonhador, um pensador, um visionário. Se estás aqui, és alguém que vê o jogo diferente, que sente o momento, analisa, conecta os pontos e <span class="textoColoridoVerde textoBold">transforma palpite em 2.5 milhões em apenas 10 dias</span>. Acreditamos no teu talento, na tua leitura de jogo, na tua coragem e na tua vontade de ser milionário em 10 dias. Entra nesse desafio com confiança, mostre o teu raciocínio. A pergunta é simples: <span class="textoGradiente" style="font-weight: bold;">Vais continuar a sonhar… ou se tornarás milionário em 10 dias?</span></p>
                 <nav class="navBtns">
                     <a href="#"><button class="btn btn0">Saiba Mais</button></a>
-                    <a href="#video"><button class="btn">Assistir Vídeo Explicativo <i class="fa-solid fa-circle-play"></i></button></a>
+                    <a href="#video"><button class="btn">Assistir Vídeo Explicativo <i class="fa-solid fa-circle-play" style="font-size: 13pt;"></i></button></a>
                 </nav>
             </nav>
             <nav class="slide-right">
@@ -468,6 +468,10 @@
                     <p class="textoSecaoLado">No entanto, naturalmente, entendemos que cada <span class="textoColorido">usuário</span> tem necessidades específicas. E, estamos sempre prontos para ajudar <span class="textoColorido">você</span>, caso a sua dúvida não esteja na área abaixo ou deseja saber mais sobre nosso projeto, nossa pesquisa ou qualquer outro aspecto do 777, não hesite e entre em contato connosco pelos <span class="textoColorido">canais oficiais</span> que você preferir.</p>
                 </nav>
             </div>
+
+            <div class="carousel-container">
+                <button class="carousel-button prev" aria-label="Anterior">&#10094;</button>
+
             <div class="conteudoPerguntas">
                 <nav class="navPergunta">
                     <div class="efeitoPergunta"></div>
@@ -547,8 +551,12 @@
                     <nav class="resposta">O prémio é único, fixo e indivisível! Cada vencedor receberá 2.500.000Kzs independentemente do quantos vencedores houver. Jamais haverá redução ou divisão do valor em caso de múltiplos vencedores.</nav>
                 </nav>
             </div>
+
+            <button class="carousel-button next" aria-label="Próximo">&#10095;</button>
+            </div>
+
             <nav class="VerTodasQuestoes" style="display: flex; justify-content: center; padding-top: 1rem;">
-                <button class="btn">Ver Mais Questões</button>
+                <button class="btn">Questões Frequentes</button>
             </nav>
         </section>
 
@@ -599,6 +607,88 @@
             </nav>
         </footer>
     </main>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.conteudoPerguntas');
+    const cards = document.querySelectorAll('.navPergunta');
+    const prevBtn = document.querySelector('.carousel-button.prev');
+    const nextBtn = document.querySelector('.carousel-button.next');
+    
+    // Tamanho do card + margem
+    const cardStyle = window.getComputedStyle(cards[0]);
+    const cardWidth = parseInt(cardStyle.width) + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
+    
+    let currentPosition = 0;
+    const visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
+    const maxPosition = cards.length - visibleCards;
+    
+    function updateButtons() {
+        prevBtn.style.display = currentPosition <= 0 ? 'none' : 'flex';
+        nextBtn.style.display = currentPosition >= maxPosition ? 'none' : 'flex';
+    }
+    
+    function moveCarousel() {
+        carousel.scrollTo({
+            left: currentPosition * cardWidth,
+            behavior: 'smooth'
+        });
+        updateButtons();
+    }
+    
+    prevBtn.addEventListener('click', function() {
+        if (currentPosition > 0) {
+            currentPosition--;
+            moveCarousel();
+        }
+    });
+    
+    nextBtn.addEventListener('click', function() {
+        if (currentPosition < maxPosition) {
+            currentPosition++;
+            moveCarousel();
+        }
+    });
+    
+    // Inicializar
+    updateButtons();
+    
+    // Opcional: navegação por teclado
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft' && currentPosition > 0) {
+            currentPosition--;
+            moveCarousel();
+        } else if (e.key === 'ArrowRight' && currentPosition < maxPosition) {
+            currentPosition++;
+            moveCarousel();
+        }
+    });
+    
+    // Opcional: navegação por touch/swipe em dispositivos móveis
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+    
+    carousel.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, {passive: true});
+    
+    function handleSwipe() {
+        const threshold = 50; // mínimo de pixels para considerar um swipe
+        if (touchStartX - touchEndX > threshold && currentPosition < maxPosition) {
+            // Swipe para a esquerda (próximo)
+            currentPosition++;
+            moveCarousel();
+        } else if (touchEndX - touchStartX > threshold && currentPosition > 0) {
+            // Swipe para a direita (anterior)
+            currentPosition--;
+            moveCarousel();
+        }
+    }
+});
+    </script>
 </body>
 </html>

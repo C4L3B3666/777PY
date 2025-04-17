@@ -73,6 +73,24 @@ body {
 
 .menu .menuHamburguer {
     display: none;
+    cursor: pointer;
+    z-index: 1000;
+    padding: .5rem;
+    flex-direction: column;
+}
+
+.menu .menuHamburguer .linha {
+    background: #40E194;
+    width: 30px;
+    position: relative;
+    margin: .2rem;
+    height: 4px;
+    transition: all 5s ease .2s;
+    border-radius: 9999px;
+}
+
+.menu.active .menuHamburguer .linha:nth-child(2) {
+    right: .7rem;
 }
 
 .menu a {
@@ -494,33 +512,82 @@ sup {
     font-family: "Inter";
 }
 
-.secao5 .conteudoPerguntas {
+.secao5 {
+    position: relative;
+}
+
+.carousel-container {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
-    height: 330px;
-    overflow: hidden;
-    padding-top: 2rem;
+    margin: auto;
     align-items: center;
     justify-content: center;
+    width: 63%;
+}
+
+.conteudoPerguntas {
+    height: 330px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-top: 2rem;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Para suave scrolling em iOS */
     transition: height .8s ease .2s;
 }
 
-.secao5 .conteudoPerguntas.active {
-    height: 1200px;
-}
-
 .conteudoPerguntas .navPergunta {
+    flex: 0 0 auto;
     width: 20%;
-    cursor: pointer;
-    height: 275px;
-    overflow: hidden;
-    background: #212121;
+    min-width: 300px; /* ou o tamanho que preferir */
+    height: 290px;
     padding: 1rem;
     margin: .5rem;
+    cursor: pointer;
+    overflow: hidden;
     position: relative;
     border-radius: 10px;
+    background: #212121;
     border: 2px solid #2E2C2C;
+    scroll-snap-align: start;
 }
+
+.carousel-button {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    border: none;
+    font-size: 25pt;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #40e194;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px #00ff88;
+}
+
+.carousel-button.prev {
+    left: -10%;
+}
+
+.carousel-button.next {
+    right: -8%;
+}
+/* Esconder scrollbar */
+.conteudoPerguntas::-webkit-scrollbar {
+    display: none;
+}
+
+.conteudoPerguntas {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 
 .navPergunta .pergunta {
     font-weight: bold;
@@ -962,7 +1029,7 @@ form .linkLogoForm img {
   }
   
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px)  {
 
     #cursor {
         display: none;
@@ -977,24 +1044,6 @@ form .linkLogoForm img {
 
     .menu .menuHamburguer {
         display: flex;
-        cursor: pointer;
-        z-index: 1000;
-        padding: .5rem;
-        flex-direction: column;
-    }
-
-    .menu .menuHamburguer .linha {
-        background: #40E194;
-        width: 30px;
-        position: relative;
-        margin: .2rem;
-        height: 4px;
-        transition: all 5s ease .2s;
-        border-radius: 9999px;
-    }
-
-    .menu.active .menuHamburguer .linha:nth-child(2) {
-        right: .7rem;
     }
 
     .menu .navLinksMenu {
@@ -1066,7 +1115,10 @@ form .linkLogoForm img {
         padding-top: .5rem;
     }
 
-
+    .carousel-container {
+        width: 90%;
+    }
+    
     .secao2 .conteudoSecao {
         width: 95%;
         height: 420px;
@@ -1215,4 +1267,220 @@ form .linkLogoForm img {
         color: #40E194;
         text-decoration: underline;
     }
- }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) { 
+    #cursor {
+        display: none;
+    }
+
+    .menu {
+        margin: 0;
+        width: 100vw;
+        border: none;
+        border-radius: 0;
+    }
+
+    .menu .menuHamburguer {
+        display: flex;
+    }
+
+
+    .menu .navLinksMenu {
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+        justify-content: space-between;
+    }
+
+    .menu .navMobilePorra {
+        display: flex;
+        height: 100vh;
+        top: 0;
+        align-items: center;
+        right: 0;
+        text-align: center;
+        width: 100vw;
+        clip-path: circle(100px at 90% -35%);
+        pointer-events: none;
+        background: black;
+        justify-content: space-around;
+        position: absolute;
+        flex-direction: column;
+        transition: all 1s ease-out .2s;
+    }
+    
+    .menu.active .navMobilePorra {
+        pointer-events: all;
+        clip-path: circle(2500px at 90% -15%);
+    } 
+
+    .menu nav:nth-child(1) {
+        z-index: 100;
+    }
+
+
+    .slide-left, .slide-right {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    } 
+
+    .secao .divTopoSecao {
+        flex-direction: column;
+        text-align: left;   
+    }
+
+    .secao .textoSecaoLado {
+        text-align: left;
+        padding-left: 0;
+        padding-top: .5rem;
+    }
+
+    .secao1 {
+        flex-direction: column;
+        padding-inline: 3rem;
+        padding-top: 5rem;
+        height: 100%;
+    }
+
+    .secao1 nav #titleHero {
+        font-size: 25pt;
+        text-align: center;
+    }
+    
+    .secao1 nav:nth-child(2) img {
+        width: 85%;
+    }
+
+    .secao .textoSecaoLado {
+        text-align: left;
+        padding-left: 0;
+        padding-top: .5rem;
+    }
+
+    .secao2 .conteudoSecao {
+        width: 95%;
+        height: 400px;
+    }
+    .carousel-container {
+        width: 90%;
+    }
+    
+    .secao2 .conteudoSecao .cardFunciona {
+        width: 45%;
+        height: 340px;
+    } 
+
+    .secao3 {
+        background: 30% 100% / cover no-repeat url("../img/bg1.png");
+    }
+    
+    .secao3 .conteudoSecao3 nav {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .secao3 .conteudoSecao3 nav p {        
+        text-align: center;
+    }
+
+    .conteudoSecao4 .CardFundador {
+        width: 55%;
+    }
+    
+    .videoExplicativo {
+        width: 99%;
+    }
+
+    #divEnviarPalpite {
+        padding: 1rem;
+        overflow-y: scroll;
+    }
+    
+    #divEnviarPalpite form {
+        top: 0;
+        width: 95%;
+        height: 100vh;
+        overflow-y: scroll;
+        margin-block-end: 5rem;
+    }
+
+    #divEnviarPalpite form div.imgForm img {
+        width: 100%;
+    }
+
+    #divEnviarPalpite form div:nth-child(1) img {
+        height: 100%;
+    }
+
+    #divEnviarPalpite form div:nth-child(2) {
+        gap: 2rem;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+    form .contentInputForm {
+        margin-block: .5rem;
+        position: relative;
+    }
+    
+    form .navInputFormRadio {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .4rem;
+        justify-content: center;
+    }
+    
+    .DivInputContePalpite {
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contentInputForm .navContentTextArea textArea {
+        width: 100%;
+    }
+
+    .primeirosInputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-conten: center;
+    }
+    
+    .navBtnsForm {
+        position: relative;
+        bottom: 0;
+        margin: 2rem;
+        right: 10%;
+    }
+
+    .navContentCheck nav span {
+        font-size: 10pt;
+    }
+
+    footer {
+        background: -30% 100% / 45% no-repeat url("../img/bg_footer.gif") #151515;
+    } 
+
+    footer nav:nth-child(2) {
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    footer nav:nth-child(3) div:nth-child(2) {
+        padding-block: 1rem;
+    }
+    footer nav:nth-child(2) a:active  {
+        color: #40E194;
+        text-decoration: underline;
+    }
+}

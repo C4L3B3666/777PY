@@ -1,18 +1,17 @@
-var bool = 0;
-var verMais = document.querySelector(".navVerMaisFunciona")
-verMais.addEventListener("click", ()=> {
-    var conteudo = document.querySelector(".secao2 .conteudoSecao")
-    conteudo.classList.toggle("active")
-    verMais.innerHTML = "<button class='btn'>Ocultar</button>"
-})
+const verMais = document.querySelector(".navVerMaisFunciona");
+const conteudo = document.querySelector(".secao2 .conteudoSecao");
+const btn = verMais.querySelector(".btn");
 
-var verQuestoes = document.querySelector(".VerTodasQuestoes")
-verQuestoes.addEventListener("click", () => {
-    var conteudo = document.querySelector(".secao5 .conteudoPerguntas")
-    conteudo.classList.toggle("active")
-    verQuestoes.innerHTML = "<button class='btn'>Ver Menos Questões</button>"
-})
-
+verMais.addEventListener("click", () => {
+    conteudo.classList.toggle("active");
+    
+    // Alterna apenas o texto do botão existente
+    if (conteudo.classList.contains("active")) {
+        btn.textContent = "Ocultar";
+    } else {
+        btn.textContent = "Ver tudo";
+    }
+});
 
 const cursor = document.getElementById("cursor")
 document.addEventListener("mousemove", (e) => {
