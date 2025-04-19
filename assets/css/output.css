@@ -98,7 +98,7 @@ body {
 }
 
 .menu .imgLogoMenu {
-    width: 16%;
+    width: 95px;
 }
 
 sup {
@@ -370,6 +370,7 @@ sup {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    background: 100% / cover no-repeat url("../img/bg0.png") fixed;
 }
 
 .conteudoSecao4 .CardFundador {
@@ -533,7 +534,7 @@ sup {
     padding-top: 2rem;
     align-items: center;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* Para suave scrolling em iOS */
+    -webkit-overflow-scrolling: touch; 
     transition: height .8s ease .2s;
 }
 
@@ -587,7 +588,6 @@ sup {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
-
 
 .navPergunta .pergunta {
     font-weight: bold;
@@ -1079,13 +1079,9 @@ form .linkLogoForm img {
         z-index: 100;
     }
 
-    .menu .imgLogoMenu {
-        width: 28%;
-    }
-
     .secao1 {
         flex-direction: column;
-        padding-inline: 3rem;
+        padding-inline: 3.5rem;
         padding-top: 5rem;
         height: 100%;
     }
@@ -1319,16 +1315,15 @@ form .linkLogoForm img {
         z-index: 100;
     }
 
-
-    .slide-left, .slide-right {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    } 
-
     .secao .divTopoSecao {
         flex-direction: column;
         text-align: left;   
+    }
+
+    .secao .textoSecaoLado {
+        text-align: left;
+        padding-left: 0;
+        padding-top: .5rem;
     }
 
     .secao .textoSecaoLado {
@@ -1343,22 +1338,6 @@ form .linkLogoForm img {
         padding-top: 5rem;
         height: 100%;
     }
-
-    .secao1 nav #titleHero {
-        font-size: 25pt;
-        text-align: center;
-    }
-    
-    .secao1 nav:nth-child(2) img {
-        width: 85%;
-    }
-
-    .secao .textoSecaoLado {
-        text-align: left;
-        padding-left: 0;
-        padding-top: .5rem;
-    }
-
     .secao2 .conteudoSecao {
         width: 95%;
         height: 400px;
@@ -1377,8 +1356,7 @@ form .linkLogoForm img {
     }
     
     .secao3 .conteudoSecao3 nav {
-        width: 100%;
-        padding: 1rem;
+        width: 80%;
     }
     
     .secao3 .conteudoSecao3 nav p {        
@@ -1386,7 +1364,7 @@ form .linkLogoForm img {
     }
 
     .conteudoSecao4 .CardFundador {
-        width: 55%;
+        width: 50%;
     }
     
     .videoExplicativo {
@@ -1482,5 +1460,44 @@ form .linkLogoForm img {
     footer nav:nth-child(2) a:active  {
         color: #40E194;
         text-decoration: underline;
+    }
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+     
+
+    .menu .navLinksMenu {
+        display: flex;;
+    }
+    .btn, .menu .navLinksMenu {
+        width: max-content;
+    }
+    .secao2 .conteudoSecao .cardFunciona {
+        width: 40%;
+    } 
+    .secao3 .conteudoSecao3 nav p {
+        text-align: center;
+    }
+    
+    .secao3 .conteudoSecao3 nav {
+        width: 60%;
+    }
+    .conteudoSecao4 .CardFundador {
+        width: 40%;
+    }
+ 
+    .conteudoPerguntas .navPergunta {
+        width: 45%;
+        min-width: 280px; /* ou o tamanho que preferir */
+        height: 100%;
+    }
+
+    .videoExplicativo {
+        width: 95%;
+    }
+    #divEnviarPalpite form {
+        width: 100%;
+        overflow-x: scroll;
     }
 }
