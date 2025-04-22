@@ -9,7 +9,7 @@ verMais.addEventListener("click", () => {
     if (conteudo.classList.contains("active")) {
         btn.textContent = "Ocultar";
     } else {
-        btn.textContent = "Ver tudo";
+        btn.textContent = "Ver Regras Completa";
     }
 });
 
@@ -158,3 +158,78 @@ const observerFounder = new IntersectionObserver(entries => {
 });
 
 cardsFounder.forEach(card => observer.observe(card));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contadorParticipantes = document.getElementById("contadorParticipantes");
+  const contadorVagas = document.getElementById("contadorVagas");
+
+  // Obter hora e dia
+  const agora = new Date();
+  const horaAtual = agora.getHours();
+  const diaSemana = agora.getDay(); // 0 = Domingo, 6 = Sábado
+
+  // Função auxiliar para salvar e atualizar o localStorage
+  const salvarDados = () => {
+    localStorage.setItem("palpites777py", participantes);
+    localStorage.setItem("vagas777py", vagas);
+  };
+
+  // Inicializar dados
+  let participantes = parseInt(localStorage.getItem("palpites777py"));
+  let vagas = parseInt(localStorage.getItem("vagas777py"));
+
+  if (!participantes || !vagas) {
+    participantes = Math.floor(Math.random() * (6000 - 4500 + 1)) + 4500;
+    vagas = Math.floor(Math.random() * (201 - 101 + 1)) + 101;
+    if (vagas % 2 === 0) vagas += 1;
+    salvarDados();
+  }
+
+  // Atualizar UI
+  const atualizarContadores = () => {
+    contadorParticipantes.innerText = participantes.toLocaleString("pt-AO");
+    contadorVagas.innerText = vagas.toLocaleString("pt-AO");
+  };
+
+  atualizarContadores();
+
+  // Lógica de aceleração
+  let ciclos = 0;
+
+  setInterval(() => {
+    ciclos++;
+
+    // Atualiza hora e dia
+    const agora = new Date();
+    const horaAtual = agora.getHours();
+    const diaSemana = agora.getDay();
+
+    // Aumento base
+    let aumento = Math.floor(Math.random() * 3); // +0 a +2
+
+    // A cada 10 minutos (ciclo de 40 x 15s)
+    if (ciclos % 40 === 0) {
+      aumento += Math.floor(Math.random() * 5) + 1; // +1 a +5
+    }
+
+    // Terça (2), Sábado (6) ou Domingo (0) → aumento extra
+    if ([0, 2, 6].includes(diaSemana)) {
+      aumento += Math.floor(Math.random() * 4); // +0 a +3
+    }
+
+    // Se ainda não for 21h, reduzir vagas normalmente
+    if (horaAtual < 21) {
+      if (vagas > 1) {
+        vagas -= Math.floor(Math.random() * 2); // -0 ou -1
+        if (vagas < 1) vagas = 1;
+      }
+    } else {
+      // Após 21h → força o fim das vagas
+      vagas = 0;
+    }
+
+    participantes += aumento;
+    salvarDados();
+    atualizarContadores();
+  }, 15000); // a cada 15 segundos
+});

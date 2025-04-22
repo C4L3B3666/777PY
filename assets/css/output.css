@@ -39,6 +39,70 @@ body {
     -webkit-background-clip: text; /* Para navegadores WebKit (Chrome, Safari) */
 }
 
+/* Esconde os elementos inicialmente */
+.slide-left, .slide-right {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+  
+.slide-left {
+    transform: translateX(-100px);
+}
+
+.slide-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+  
+.slide-right {
+    transform: translateX(100px);
+}
+
+.slide-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#preloader {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 9999;
+    position: fixed;
+    align-items: center;
+    background: #151515;
+    justify-content: center;
+    transition: clip-path 1s ease; 
+    clip-path: circle(100% at 50% 50%); 
+  }
+
+  #preloader.hide {
+    pointer-events: none; 
+    clip-path: circle(100px at 90% -25%);
+}
+  
+  .preloader-container {
+    text-align: center;
+  }
+  
+  .preloader-gif {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    image-rendering: pixelated;
+  }
+  
+  .preloader-text {
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 24pt;
+    text-align: center;
+    color: gray;
+}
+
 #cursor {
     width: 30px;
     height: 30px;
@@ -53,6 +117,33 @@ body {
     box-shadow: 0 0 4px #40E194;
     transform: translate(-50%, -50%);
     transition: all .3s cubic-bezier(.22, 1, .36, 1);
+}
+
+.btn {
+    box-shadow: 0 0 12px #00ff88;
+    padding: .5rem 1rem;
+    font-weight: bold;
+    font-family: "Inter";
+    font-size: 11pt;
+    cursor: pointer;
+    background: #40E164;
+    color: white;
+    border: none;
+    border-radius: 999px;
+
+}
+.btn0 {
+    box-shadow: none;
+    background: transparent;
+}
+
+.btn0:hover {
+    color: #40E164
+}
+
+.btnVoltarHomeTermPolitics {
+    background: #151515; 
+    padding-inline-start: 3rem;
 }
 
 .menu {
@@ -136,27 +227,6 @@ sup {
     display: none;
 }
 
-.btn {
-    box-shadow: 0 0 12px #00ff88;
-    padding: .5rem 1rem;
-    font-weight: bold;
-    font-family: "Inter";
-    font-size: 11pt;
-    cursor: pointer;
-    background: #40E164;
-    color: white;
-    border: none;
-    border-radius: 999px;
-
-}
-.btn0 {
-    box-shadow: none;
-    background: transparent;
-}
-
-.btn0:hover {
-    color: #40E164
-}
 
 .secao1 {
     height: 100vh;
@@ -227,6 +297,31 @@ sup {
     font-size: 14pt;
 }
 
+
+.secao-estatisticas {
+    display: flex;
+    gap: 4rem;
+    padding: 2rem 0rem;
+    background-color: #151515;
+}
+
+.box-estatistica {
+    color: white;
+}
+
+.box-estatistica p {
+    color: #40E194;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: "Inter";
+}
+
+.box-estatistica span {
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: 'Geist';
+}
+
 .secao2 .conteudoSecao {
     display: flex;
     width: 75%;
@@ -270,13 +365,13 @@ sup {
     border-radius: 9999px;
     font-size: 20pt;
     font-weight: bolder;
-    font-family: "Libre Franklin";
     right: -3%;
     color: #40E194;
-    background: #151515;
-    border: 2px solid #151515;
+    background: #212121;
+    border: 2px solid #2E2C2C;
     box-shadow: 0 0 4px #151515;
     transition: transform .4s ease;
+    font-family: "Geist";
 }
 
 .secao2 .cardFunciona:hover .numeroFunciona {
@@ -314,7 +409,6 @@ sup {
     50% { opacity: 0.8; }
 }
 
-
 .secao3 .conteudoPossoParticipar {
     display: flex;
     align-items: center;
@@ -351,6 +445,7 @@ sup {
     font-size: 15pt;
     font-weight: bolder;
     font-family: "Inter";
+    text-align: center;
     transition: color .3s ease-in;
 }
 
@@ -370,7 +465,6 @@ sup {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background: 100% / cover no-repeat url("../img/bg0.png") fixed;
 }
 
 .conteudoSecao4 .CardFundador {
@@ -535,7 +629,6 @@ sup {
     align-items: center;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch; 
-    transition: height .8s ease .2s;
 }
 
 .conteudoPerguntas .navPergunta {
@@ -961,78 +1054,22 @@ form .linkLogoForm img {
     align-items: center; 
     justify-content: space-between; 
     gap: 1rem;
-}
-
-/* Esconde os elementos inicialmente */
-.slide-left, .slide-right {
-    opacity: 0;
-    transition: all 0.8s ease-out;
-}
-  
-  /* Slide da esquerda (texto) */
-.slide-left {
-    transform: translateX(-100px);
-}
-.slide-left.show {
-    opacity: 1;
-    transform: translateX(0);
-}
-  
-  /* Slide da direita (imagem) */
-.slide-right {
-    transform: translateX(100px);
-}
-.slide-right.show {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #151515; /* cor de fundo escura e elegante */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-
-    clip-path: circle(100% at 50% 50%); /* Inicialmente um círculo que cobre toda a tela */
-    transition: clip-path 1s ease-in-out; /* Adiciona uma transição suave */
-  }
-
-  #preloader.hide {
-    clip-path: circle(100px at 90% -25%);
-    pointer-events: none; /* Evita que o preloader bloqueie interações */
-}
-  
-  .preloader-container {
-    text-align: center;
-  }
-  
-  .preloader-gif {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 20px;
-    image-rendering: pixelated;
-  }
-  
-  .preloader-text {
-    font-family: 'Geist';
-    font-weight: bold;
-    font-size: 24pt;
-    text-align: center;
-    color: gray;
-  }
-  
+}  
 
 @media screen and (max-width: 768px)  {
+    body {
+        overflow-x: hidden;
+    }
 
     #cursor {
         display: none;
+    }
+
+    .btnVoltarHomeTermPolitics {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
     }
 
     .menu {
@@ -1112,9 +1149,14 @@ form .linkLogoForm img {
     }
 
     .carousel-container {
-        width: 90%;
+        width: 100%;
     }
-    
+
+    .conteudoPerguntas .navPergunta {
+        width: 100%;
+        min-width: 250px; /* ou o tamanho que preferir */
+    }
+
     .secao2 .conteudoSecao {
         width: 95%;
         height: 420px;
@@ -1132,15 +1174,7 @@ form .linkLogoForm img {
     .secao3 {
         background: 30% 100% / cover no-repeat url("../img/bg1.png");
     }
-    
-    .secao3 .conteudoSecao3 { 
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
         
-    }
-    
     .secao3 .conteudoSecao3 nav {
         width: 100%;
         padding: 1rem;
@@ -1148,11 +1182,18 @@ form .linkLogoForm img {
     
     .secao3 .conteudoSecao3 nav p {        
         font-size: 14pt;
-        text-align: center;
     }
 
     .conteudoSecao4 .CardFundador {
         width: 85%;
+    }
+
+    .conteudoPerguntas {
+        width: max-content; 
+    }
+
+    .CardFundador .efeitoCard3, .CardFundador .efeitoCard15 {
+        top: 35%;
     }
 
     .secao6 .textoImpactante, .secao7 .textoSecao7, .navTextoSecao8 h4 {
@@ -1266,6 +1307,10 @@ form .linkLogoForm img {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) { 
+    body {
+        overflow-x: hidden;
+    }
+
     #cursor {
         display: none;
     }
@@ -1332,6 +1377,13 @@ form .linkLogoForm img {
         padding-top: .5rem;
     }
 
+    .slide-left, .slide-right {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }   /* TALVEZ ISSO DÊ PROBLEMAS MAIS TARDE  */
+
     .secao1 {
         flex-direction: column;
         padding-inline: 3rem;
@@ -1359,14 +1411,15 @@ form .linkLogoForm img {
         width: 80%;
     }
     
-    .secao3 .conteudoSecao3 nav p {        
-        text-align: center;
+    .conteudoSecao4 .CardFundador {
+        width: 35%;
+        top: 2rem;
+    }
+     
+    .CardFundador .efeitoCard3, .efeitoCard15 {
+        top: 25%;
     }
 
-    .conteudoSecao4 .CardFundador {
-        width: 50%;
-    }
-    
     .videoExplicativo {
         width: 99%;
     }
@@ -1465,7 +1518,10 @@ form .linkLogoForm img {
 
 
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
-     
+    
+    body {
+        overflow-x: hidden;
+    }
 
     .menu .navLinksMenu {
         display: flex;;
@@ -1476,15 +1532,20 @@ form .linkLogoForm img {
     .secao2 .conteudoSecao .cardFunciona {
         width: 40%;
     } 
-    .secao3 .conteudoSecao3 nav p {
-        text-align: center;
-    }
+    
+    .btnVoltarHomeTermPolitics {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }   
     
     .secao3 .conteudoSecao3 nav {
         width: 60%;
     }
     .conteudoSecao4 .CardFundador {
-        width: 40%;
+        width: 35%;
+        top: 5rem;
     }
  
     .conteudoPerguntas .navPergunta {
