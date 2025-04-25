@@ -73,7 +73,6 @@ body {
     z-index: 9999;
     position: fixed;
     overflow-x: hidden;
-    text-align: center;
     align-items: center;
     padding-inline: 2rem;
     background: #151515;
