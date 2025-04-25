@@ -18,6 +18,7 @@ html {
 
 body {
     overflow-x: hidden;
+    background: #151515;
 }
 
 .textoColorido {
@@ -66,19 +67,22 @@ body {
 #preloader {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     display: flex;
     z-index: 9999;
     position: fixed;
+    overflow-x: hidden;
+    text-align: center;
     align-items: center;
+    padding-inline: 2rem;
     background: #151515;
     justify-content: center;
     transition: clip-path 1s ease; 
     clip-path: circle(100% at 50% 50%); 
   }
 
-  #preloader.hide {
+#preloader.hide {
     pointer-events: none; 
     clip-path: circle(100px at 90% -25%);
 }
@@ -98,7 +102,7 @@ body {
   .preloader-text {
     font-family: 'Inter';
     font-weight: bold;
-    font-size: 24pt;
+    font-size: 22pt;
     text-align: center;
     color: gray;
 }
@@ -1544,8 +1548,8 @@ form .linkLogoForm img {
         width: 60%;
     }
     .conteudoSecao4 .CardFundador {
-        width: 35%;
-        top: 5rem;
+        width: 25%;
+        top: 6rem;
     }
  
     .conteudoPerguntas .navPergunta {
