@@ -442,7 +442,7 @@
                     <nav class="statusFundador">
                         Co-Diretor de Operações (Co-COO) e fundador
                     </nav>
-                    <nav class="sobreFundador">777 é feita de pessoas que desafiam os limites durante 10 dias. Pessoas que acreditam no impossível - são os nosso recurso mais valioso.</nav>
+                    <nav class="sobreFundador">777 é feita de pessoas que desafiam os limites durante 10 dias. Pessoas que acreditam no impossível - são os nossos recursos mais valioso.</nav>
                     <div class="efeitoCard11 efeitoCard"></div>
                 </nav>
 
@@ -621,89 +621,5 @@
             </nav>
         </footer>
     </main>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.conteudoPerguntas');
-    const cards = document.querySelectorAll('.navPergunta');
-    const prevBtn = document.querySelector('.carousel-button.prev');
-    const nextBtn = document.querySelector('.carousel-button.next');
-    
-    // Tamanho do card + margem
-    const cardStyle = window.getComputedStyle(cards[0]);
-    const cardWidth = parseInt(cardStyle.width) + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
-    
-    let currentPosition = 0;
-    const visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
-    const maxPosition = cards.length - visibleCards;
-    
-    function updateButtons() {
-        prevBtn.style.display = currentPosition <= 0 ? 'none' : 'flex';
-        nextBtn.style.display = currentPosition >= maxPosition ? 'none' : 'flex';
-    }
-    
-    function moveCarousel() {
-        carousel.scrollTo({
-            left: currentPosition * cardWidth,
-            behavior: 'smooth'
-        });
-        updateButtons();
-    }
-    
-    prevBtn.addEventListener('click', function() {
-        if (currentPosition > 0) {
-            currentPosition--;
-            moveCarousel();
-        }
-    });
-    
-    nextBtn.addEventListener('click', function() {
-        if (currentPosition < maxPosition) {
-            currentPosition++;
-            moveCarousel();
-        }
-    });
-    
-    // Inicializar
-    updateButtons();
-    
-    // Opcional: navegação por teclado
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft' && currentPosition > 0) {
-            currentPosition--;
-            moveCarousel();
-        } else if (e.key === 'ArrowRight' && currentPosition < maxPosition) {
-            currentPosition++;
-            moveCarousel();
-        }
-    });
-    
-    // Opcional: navegação por touch/swipe em dispositivos móveis
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carousel.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    }, {passive: true});
-    
-    carousel.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, {passive: true});
-    
-    function handleSwipe() {
-        const threshold = 50; // mínimo de pixels para considerar um swipe
-        if (touchStartX - touchEndX > threshold && currentPosition < maxPosition) {
-            // Swipe para a esquerda (próximo)
-            currentPosition++;
-            moveCarousel();
-        } else if (touchEndX - touchStartX > threshold && currentPosition > 0) {
-            // Swipe para a direita (anterior)
-            currentPosition--;
-            moveCarousel();
-        }
-    }
-});
-    </script>
 </body>
 </html>

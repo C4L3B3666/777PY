@@ -1329,7 +1329,6 @@ form .linkLogoForm img {
         display: flex;
     }
 
-
     .menu .navLinksMenu {
         display: flex;
         flex-direction: column;
@@ -1393,10 +1392,12 @@ form .linkLogoForm img {
         padding-top: 5rem;
         height: 100%;
     }
+
     .secao2 .conteudoSecao {
         width: 95%;
         height: 400px;
     }
+
     .carousel-container {
         width: 90%;
     }
@@ -1440,12 +1441,8 @@ form .linkLogoForm img {
         margin-block-end: 5rem;
     }
 
-    #divEnviarPalpite form div.imgForm img {
-        width: 100%;
-    }
-
-    #divEnviarPalpite form div:nth-child(1) img {
-        height: 100%;
+    #divEnviarPalpite form div.imgForm  {
+        display: none;
     }
 
     #divEnviarPalpite form div:nth-child(2) {
@@ -1488,10 +1485,15 @@ form .linkLogoForm img {
     }
     
     .navBtnsForm {
+        top: 2rem;
+        margin: auto;
         position: relative;
-        bottom: 0;
-        margin: 2rem;
-        right: 10%;
+    }
+
+    .navContentCheck nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .navContentCheck nav span {
