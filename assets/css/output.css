@@ -427,6 +427,20 @@ sup {
     font-family: "Montserrat"
 }
 
+.secao2 .cardFunciona .tituloFaseCardFunciona {
+    color: white;
+    font-size: 11pt;
+    font-weight: bold;
+    font-family: "Montserrat", system-ui;
+}
+
+.secao2 .cardFunciona .listaCardFunciona {
+    left: 10%;
+    font-family: "Montserrat";
+    font-weight: 200;
+    position: relative;
+}
+
 .navVerMaisFunciona {
     display: flex;
     padding-top: 2rem;
@@ -870,6 +884,7 @@ footer nav:nth-child(3) div:nth-child(2) {
 
 #divEnviarPalpite {
     padding: 2rem;
+    height: max-content;
     position: absolute;
     z-index: 1000;
     top: 0;
@@ -900,10 +915,13 @@ footer nav:nth-child(3) div:nth-child(2) {
 
 #divEnviarPalpite form {
     width: 90%;
-    background: #212121;
-    border: 2px solid #2E2C2C;
     display: flex;
     align-items: top;
+    height: max-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #212121;
+    border: 2px solid #2E2C2C;
     justify-content: space-around;
 }
 
