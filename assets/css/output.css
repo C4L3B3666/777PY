@@ -86,19 +86,19 @@ body {
     clip-path: circle(100px at 90% -25%);
 }
   
-  .preloader-container {
+.preloader-container {
     text-align: center;
-  }
+}
   
-  .preloader-gif {
+.preloader-gif {
     width: 80px;
     height: 80px;
     object-fit: contain;
     margin-bottom: 20px;
     image-rendering: pixelated;
-  }
+}
   
-  .preloader-text {
+.preloader-text {
     font-family: 'Inter';
     font-weight: bold;
     font-size: 22pt;
@@ -135,6 +135,33 @@ body {
     border-radius: 999px;
 
 }
+
+.dev-warning {
+    position: fixed;
+    border: 2px solid #2E2C2C;
+    background: #212121;
+    color: #40E194;
+    padding: .5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: "Geist";
+    z-index: 998;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-50%) scale(0.9);
+}
+
+.dev-warning.show {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to { 
+        opacity: 0.95;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
 .btn0 {
     box-shadow: none;
     background: transparent;
