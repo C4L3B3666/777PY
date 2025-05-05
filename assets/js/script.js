@@ -181,19 +181,25 @@
     }
   
     // --- FORMULÁRIO DE ENVIO ---
-    const mostraForm = document.getElementById("MostrarFomEnviar");
-    const cancelarForm = document.getElementById("cancelarForm");
-    const telaForm = document.getElementById("divEnviarPalpite");
-    if (mostraForm && cancelarForm && telaForm) {
-        mostraForm.addEventListener("click", () => {
-            telaForm.classList.add("activo");
-            document.body.style.overflowY = "hidden";
-        });
-        cancelarForm.addEventListener("click", () => {
+const mostraForm = document.getElementById("MostrarFomEnviar");
+const botoesCancelar = document.querySelectorAll(".cancelarForm"); // Seleciona TODOS os botões com a classe
+const telaForm = document.getElementById("divEnviarPalpite");
+
+if (mostraForm && botoesCancelar.length > 0 && telaForm) {
+    mostraForm.addEventListener("click", () => {
+        telaForm.classList.add("activo");
+        document.body.style.overflowY = "hidden";
+    });
+    
+    // Adiciona o evento a CADA botão de cancelar
+    botoesCancelar.forEach(botao => {
+        botao.addEventListener("click", (e) => {
+            e.preventDefault(); // Evita comportamento padrão do link
             telaForm.classList.remove("activo");
             document.body.style.overflowY = "scroll";
         });
-    }
+    });
+}
   
     // --- ANIMAÇÕES SLIDE ---
     const observerSlide = new IntersectionObserver(entries => {
@@ -219,6 +225,9 @@
     if (preloader) {
         setTimeout(() => {
             preloader.classList.add("hide");
+
+            if (preloader.classList.contains("hide"))
+                document.querySelector("body").classList.remove("semScroll")
             
             // Remover completamente após a animação terminar
             setTimeout(() => {
