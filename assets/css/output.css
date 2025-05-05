@@ -1256,13 +1256,14 @@ form .linkLogoForm img {
     #divEnviarPalpite {
         padding: 1rem;
         overflow-y: scroll;
+        height: max-content;
     }
     
     #divEnviarPalpite form {
-        height: 100vh;
         top: 0;
-        margin-block-end: 5rem;
+        height: max-content;
         overflow-y: scroll;
+        margin-block-end: 5rem;
     }
 
     #divEnviarPalpite form div.imgForm  {
