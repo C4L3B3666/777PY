@@ -1325,6 +1325,11 @@ form .linkLogoForm img {
         right: 10%;
     }
 
+    .navBtnsForm1 {
+        visibility: hidden;
+        pointer-events: none;
+    }
+
     .navContentCheck nav span {
         font-size: 10pt;
     }
