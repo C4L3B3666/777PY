@@ -1256,14 +1256,13 @@ form .linkLogoForm img {
     #divEnviarPalpite {
         padding: 1rem;
         overflow-y: scroll;
-        height: max-content;
     }
     
     #divEnviarPalpite form {
+        height: 100vh;
         top: 0;
-        height: max-content;
-        overflow-y: scroll;
         margin-block-end: 5rem;
+        overflow-y: scroll;
     }
 
     #divEnviarPalpite form div.imgForm  {
@@ -1317,6 +1316,13 @@ form .linkLogoForm img {
         flex-direction: column;
         align-items: center;
         justify-conten: center;
+    }
+    
+    .navBtnsForm {
+        position: relative;
+        bottom: 0;
+        margin: 2rem;
+        right: 10%;
     }
 
     .navContentCheck nav span {
