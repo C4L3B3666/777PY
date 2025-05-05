@@ -51,7 +51,7 @@
 })();
 
 // Código principal da aplicação
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   // --- CARROSSEL DE PERGUNTAS ---
   const carousel = document.querySelector(".conteudoPerguntas");
   const cards = document.querySelectorAll(".navPergunta");
