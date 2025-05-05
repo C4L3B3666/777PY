@@ -1319,7 +1319,7 @@ form .linkLogoForm img {
     }
     
     .navBtnsForm {
-        position: relative;
+        position: static;
         bottom: 0;
         margin: 2rem;
         right: 10%;
