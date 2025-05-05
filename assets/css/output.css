@@ -1255,14 +1255,16 @@ form .linkLogoForm img {
 
     #divEnviarPalpite {
         padding: 1rem;
-        overflow-y: scroll;
+        overflow-y: auto;
+        align-items: flex-start;
     }
     
     #divEnviarPalpite form {
-        height: 100vh;
         top: 0;
-        margin-block-end: 5rem;
+        height: 100vh;
+        overflow: hidden;
         overflow-y: scroll;
+        margin-block-end: 5rem;
     }
 
     #divEnviarPalpite form div.imgForm  {
@@ -1275,6 +1277,8 @@ form .linkLogoForm img {
         padding: 1rem;
         display: flex;
         flex-direction: column;
+        padding-bottom: 80px; /* Altura aproximada dos botões */
+        -webkit-overflow-scrolling: touch; /* Melhora scroll no iOS */
     }
     
     form div:nth-child(2) nav h3 {
@@ -1319,14 +1323,31 @@ form .linkLogoForm img {
     }
     
     .navBtnsForm {
-        position: relative;
+        /* position: relative;
         bottom: 0;
         margin: 2rem;
-        right: 10%;
+        right: 10%; */
+        position: sticky;
+        bottom: 0;
+        background: #212121;
+        padding: 1rem;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        border-top: 2px solid #2E2C2C;
+        z-index: 10;
     }
+    .navBtnsForm a [
+        flex: 1;
+        max-width: 150px;
+    ]
 
     .navContentCheck nav span {
         font-size: 10pt;
+        display: inline-block;
+        text-align: center;
     }
 
     footer {
