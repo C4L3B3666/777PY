@@ -181,50 +181,96 @@
     }
   
     // --- CONTROLADORES VÍDEOS ---
-    const videoPlayer = document.querySelector('.videoExplicativo');
-    const playPauseButton = document.querySelector('.fa-play, .fa-pause');
-    const backwardButton = document.querySelector('.fa-backward');
-    const forwardButton = document.querySelector('.fa-forward');
+const videoPlayer = document.querySelector('.videoExplicativo');
+const playPauseButton = document.querySelector('.fa-play, .fa-pause');
+const backwardButton = document.querySelector('.fa-backward');
+const forwardButton = document.querySelector('.fa-forward');
+const fullscreenButton = document.querySelector('.fa-expand, .fa-compress'); // Botão fullscreen
 
-    // Garante que o vídeo tenha som
-    videoPlayer.muted = false;
-    videoPlayer.volume = 1;
+// Garante que o vídeo tenha som
+videoPlayer.muted = false;
+videoPlayer.volume = 1;
 
-    // Alterna entre play e pause
-    function togglePlayPause() {
-        const isPlaying = !videoPlayer.paused && !videoPlayer.ended;
+// Alterna entre play e pause
+function togglePlayPause() {
+    const isPlaying = !videoPlayer.paused && !videoPlayer.ended;
 
-        if (isPlaying) {
-            videoPlayer.pause();
-            playPauseButton.classList.remove('fa-pause');
-            playPauseButton.classList.add('fa-play');
-        } else {
-            videoPlayer.play();
-            playPauseButton.classList.remove('fa-play');
-            playPauseButton.classList.add('fa-pause');
-        }
-    }
-
-    // Retroceder e avançar
-    function skip(seconds) {
-        videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime + seconds);
-    }
-
-    // Eventos
-    playPauseButton.addEventListener('click', togglePlayPause);
-    backwardButton.addEventListener('click', () => skip(-10));
-    forwardButton.addEventListener('click', () => skip(10));
-
-    // Atualiza o ícone se o vídeo for pausado/continuado por outros meios
-    videoPlayer.addEventListener('play', () => {
-        playPauseButton.classList.remove('fa-play');
-        playPauseButton.classList.add('fa-pause');
-    });
-
-    videoPlayer.addEventListener('pause', () => {
+    if (isPlaying) {
+        videoPlayer.pause();
         playPauseButton.classList.remove('fa-pause');
         playPauseButton.classList.add('fa-play');
-    });
+    } else {
+        videoPlayer.play();
+        playPauseButton.classList.remove('fa-play');
+        playPauseButton.classList.add('fa-pause');
+    }
+}
+
+// Retroceder e avançar
+function skip(seconds) {
+    videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime + seconds);
+}
+
+// Ampliar (fullscreen) + play automático
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        // Entra em fullscreen e toca o vídeo
+        if (videoPlayer.requestFullscreen) {
+            videoPlayer.requestFullscreen();
+        } else if (videoPlayer.webkitRequestFullscreen) {
+            videoPlayer.webkitRequestFullscreen();
+        } else if (videoPlayer.msRequestFullscreen) {
+            videoPlayer.msRequestFullscreen();
+        }
+
+        videoPlayer.play(); // Play automático
+        playPauseButton.classList.remove('fa-play');
+        playPauseButton.classList.add('fa-pause');
+
+        fullscreenButton.classList.remove('fa-expand');
+        fullscreenButton.classList.add('fa-compress');
+    } else {
+        // Sai do fullscreen
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+
+        fullscreenButton.classList.remove('fa-compress');
+        fullscreenButton.classList.add('fa-expand');
+    }
+}
+
+// Atualiza o ícone se sair do fullscreen por outros meios (ex: tecla ESC)
+document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) {
+        fullscreenButton.classList.remove('fa-compress');
+        fullscreenButton.classList.add('fa-expand');
+    } else {
+        fullscreenButton.classList.remove('fa-expand');
+        fullscreenButton.classList.add('fa-compress');
+    }
+});
+
+// Eventos
+playPauseButton.addEventListener('click', togglePlayPause);
+backwardButton.addEventListener('click', () => skip(-10));
+forwardButton.addEventListener('click', () => skip(10));
+fullscreenButton.addEventListener('click', toggleFullscreen);
+
+videoPlayer.addEventListener('play', () => {
+    playPauseButton.classList.remove('fa-play');
+    playPauseButton.classList.add('fa-pause');
+});
+
+videoPlayer.addEventListener('pause', () => {
+    playPauseButton.classList.remove('fa-pause');
+    playPauseButton.classList.add('fa-play');
+});
+
 
     // --- FORMULÁRIO DE ENVIO ---
 const mostraForm = document.getElementById("MostrarFomEnviar");
