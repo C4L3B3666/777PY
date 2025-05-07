@@ -1283,6 +1283,15 @@ form .linkLogoForm img {
         width: 100%;
     }
 
+    .navControlesVideo {
+        gap: 1rem;
+        flex-direction: column;
+    }
+    
+    .navControlesVideo nav:nth-child(1) i {
+        font-size: 15pt;
+    }
+    
     #divEnviarPalpite {
         padding: 1rem;
         overflow-y: scroll;
