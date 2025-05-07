@@ -180,6 +180,52 @@
         });
     }
   
+    // --- CONTROLADORES VÍDEOS ---
+    const videoPlayer = document.querySelector('.videoExplicativo');
+    const playPauseButton = document.querySelector('.fa-play, .fa-pause');
+    const backwardButton = document.querySelector('.fa-backward');
+    const forwardButton = document.querySelector('.fa-forward');
+
+    // Garante que o vídeo tenha som
+    videoPlayer.muted = false;
+    videoPlayer.volume = 1;
+
+    // Alterna entre play e pause
+    function togglePlayPause() {
+        const isPlaying = !videoPlayer.paused && !videoPlayer.ended;
+
+        if (isPlaying) {
+            videoPlayer.pause();
+            playPauseButton.classList.remove('fa-pause');
+            playPauseButton.classList.add('fa-play');
+        } else {
+            videoPlayer.play();
+            playPauseButton.classList.remove('fa-play');
+            playPauseButton.classList.add('fa-pause');
+        }
+    }
+
+    // Retroceder e avançar
+    function skip(seconds) {
+        videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime + seconds);
+    }
+
+    // Eventos
+    playPauseButton.addEventListener('click', togglePlayPause);
+    backwardButton.addEventListener('click', () => skip(-10));
+    forwardButton.addEventListener('click', () => skip(10));
+
+    // Atualiza o ícone se o vídeo for pausado/continuado por outros meios
+    videoPlayer.addEventListener('play', () => {
+        playPauseButton.classList.remove('fa-play');
+        playPauseButton.classList.add('fa-pause');
+    });
+
+    videoPlayer.addEventListener('pause', () => {
+        playPauseButton.classList.remove('fa-pause');
+        playPauseButton.classList.add('fa-play');
+    });
+
     // --- FORMULÁRIO DE ENVIO ---
 const mostraForm = document.getElementById("MostrarFomEnviar");
 const botoesCancelar = document.querySelectorAll(".cancelarForm"); // Seleciona TODOS os botões com a classe

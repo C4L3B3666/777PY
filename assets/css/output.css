@@ -786,6 +786,29 @@ sup {
     font-size: 30pt;
 }
 
+.navControlesVideo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navControlesVideo nav:nth-child(1) {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navControlesVideo nav:nth-child(1) i {
+    font-size: 22pt;
+    padding: .5rem;
+    cursor: pointer;
+    color: #a0a0a0;
+}
+
+.navControlesVideo nav:nth-child(1) i:hover,
+.navControlesVideo {
+    color: #40E194;
+}
 
 .videoExplicativo {
     width: 80%;
