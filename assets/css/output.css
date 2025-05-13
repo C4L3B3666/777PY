@@ -822,29 +822,6 @@ sup {
     font-size: 30pt;
 }
 
-.secao9 {
-   background: 50% 20% / cover no-repeat url("../img/bg1.png")
-}
-
-.secao9 div:nth-child(2) nav {
-    display: flex;
-    flex-direction: column;
-    padding-block: 1rem;
-}
-
-.secao9 div:nth-child(2) nav h3 {
-    font-family: "Geist";
-    color: #40E194;
-}
-.secao9 div:nth-child(2) nav p, ul {
-    font-family: "Geist";
-    color: white;
-}
-
-.secao9 div:nth-child(2) nav ul {
-    padding-inline-start: 2rem;
-}
-
 footer {
     display: flex;
     padding: 2rem 3rem;
