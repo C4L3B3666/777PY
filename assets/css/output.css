@@ -356,6 +356,10 @@ sup {
     font-family: 'Geist';
 }
 
+.secao2 {
+    background: 90% 5% / cover no-repeat url("../img/bg1.png");
+}
+
 .secao2 .conteudoSecao {
     display: flex;
     width: 75%;
@@ -470,31 +474,29 @@ sup {
     font-family: "Inter";
 }
 
-.secao3 {
-    background: 90% 5% / cover no-repeat url("../img/bg1.png");
-}
-
 .secao3 .conteudoSecao3 { 
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    padding-inline: 4rem;
+    justify-content: space-around;
     
 }
 
-.secao3 .conteudoSecao3 nav {
-    width: 50%;
-    padding: 1rem;
+.secao3 .conteudoSecao3 nav:nth-child(1) {
+    width: 55%;
 }
 
 .secao3 .conteudoSecao3 nav p {
-    margin-blocK: 2rem;
+    margin-block: 2rem;
     color: #2E2C2C;
     font-size: 15pt;
     font-weight: bolder;
     font-family: "Inter";
-    text-align: center;
     transition: color .3s ease-in;
+}
+
+.secao3 .conteudoSecao3 nav img {
+    width: 95%;
 }
 
 .secao3 .conteudoSecao3 nav p.activo {
@@ -518,7 +520,7 @@ sup {
 .conteudoSecao4 .CardFundador {
     top: 7rem;
     z-index: 0;
-    width: 25%;
+    width: 24%;
     margin: 2rem;
     padding: 1rem;
     display: flex;
@@ -1212,6 +1214,10 @@ form .linkLogoForm img {
         min-width: 250px; /* ou o tamanho que preferir */
     }
 
+    .secao2 {
+        background: 30% 100% / cover no-repeat url("../img/bg1.png");
+    }
+
     .secao2 .conteudoSecao {
         width: 95%;
         height: 420px;
@@ -1225,18 +1231,25 @@ form .linkLogoForm img {
         width: 90%;
         flex-shrink: 0;
     } 
-
-    .secao3 {
-        background: 30% 100% / cover no-repeat url("../img/bg1.png");
-    }
         
-    .secao3 .conteudoSecao3 nav {
+    .secao3 .conteudoSecao3 { 
+        padding-inline: 0;
+        flex-direction: column;
+        
+    }
+
+    .secao3 .conteudoSecao3 nav:nth-child(1) {
         width: 100%;
-        padding: 1rem;
+        padding-inline: 1rem;
+    }
+    
+    .secao3 .conteudoSecao3 nav img {
+        width: 100%;
     }
     
     .secao3 .conteudoSecao3 nav p {        
         font-size: 14pt;
+        text-align: center;
     }
 
     .conteudoSecao4 .CardFundador {
@@ -1473,18 +1486,35 @@ form .linkLogoForm img {
     .carousel-container {
         width: 90%;
     }
+
+    .secao2 {
+        background: 30% 100% / cover no-repeat url("../img/bg1.png");
+    }
     
     .secao2 .conteudoSecao .cardFunciona {
         width: 45%;
         height: 340px;
     } 
 
-    .secao3 {
-        background: 30% 100% / cover no-repeat url("../img/bg1.png");
+    .secao3 .conteudoSecao3 { 
+        padding-inline: 0;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+
+    .secao3 .conteudoSecao3 nav:nth-child(1) {
+        width: 65%;
+        padding-inline: 1rem;
     }
     
-    .secao3 .conteudoSecao3 nav {
-        width: 80%;
+    .secao3 .conteudoSecao3 nav img {
+        width: 99%;
+    }
+    
+    .secao3 .conteudoSecao3 nav p {        
+        font-size: 14pt;
+        text-align: center;
     }
     
     .conteudoSecao4 .CardFundador {
