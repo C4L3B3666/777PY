@@ -444,9 +444,14 @@ sup {
 
 .secao2 .cardFunciona .listaCardFunciona {
     left: 10%;
+    color: white;
     font-family: "Montserrat";
     font-weight: 200;
     position: relative;
+}
+
+.secao2 .cardFunciona .listaCardFunciona .textoBold {
+    color: gray;
 }
 
 .navVerMaisFunciona {
